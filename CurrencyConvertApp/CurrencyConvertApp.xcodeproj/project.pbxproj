@@ -10,7 +10,12 @@
 		266E18263036E40A00A58704 /* CurrencyConvertAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */; };
 		266E18273036E40A00A58704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266E18213036E40A00A58704 /* Assets.xcassets */; };
 		266E18303036E50300A58704 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266E182F3036E50300A58704 /* ColorAssets.xcassets */; };
-		266E18323036E66900A58704 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E18313036E66900A58704 /* SplashView.swift */; };
+		266E18323036E66900A58704 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E18313036E66900A58704 /* SplashScreenView.swift */; };
+		26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */; };
+		26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */; };
+		26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB4127303701B6008AA330 /* Font+Extension .swift */; };
+		26DB412A30370216008AA330 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB412930370216008AA330 /* Text+Extension.swift */; };
+		26DB412C3037039E008AA330 /* OnBoradingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB412B3037039E008AA330 /* OnBoradingScreenViewModel.swift */; };
 		916AC7EF8277E2B35F06331D /* Pods_CurrencyConvertApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C462C0D84ACCB3F805EC5D2F /* Pods_CurrencyConvertApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,7 +24,12 @@
 		266E18213036E40A00A58704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertAppApp.swift; sourceTree = "<group>"; };
 		266E182F3036E50300A58704 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
-		266E18313036E66900A58704 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		266E18313036E66900A58704 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoadScreenView.swift; sourceTree = "<group>"; };
+		26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		26DB4127303701B6008AA330 /* Font+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension .swift"; sourceTree = "<group>"; };
+		26DB412930370216008AA330 /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
+		26DB412B3037039E008AA330 /* OnBoradingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoradingScreenViewModel.swift; sourceTree = "<group>"; };
 		75E630A59890E759DFD175DE /* Pods-CurrencyConvertApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConvertApp.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConvertApp/Pods-CurrencyConvertApp.release.xcconfig"; sourceTree = "<group>"; };
 		C462C0D84ACCB3F805EC5D2F /* Pods_CurrencyConvertApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConvertApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988F356712C687F2FD4C421 /* Pods-CurrencyConvertApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConvertApp.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConvertApp/Pods-CurrencyConvertApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,7 +81,8 @@
 		266E18283036E4A300A58704 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				266E18313036E66900A58704 /* SplashView.swift */,
+				266E18313036E66900A58704 /* SplashScreenView.swift */,
+				26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,6 +90,8 @@
 		266E18293036E4B600A58704 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */,
+				26DB412B3037039E008AA330 /* OnBoradingScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -93,6 +106,7 @@
 		266E182B3036E4C300A58704 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				26DB41203036FDEF008AA330 /* Exteations */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -120,6 +134,15 @@
 				266E182F3036E50300A58704 /* ColorAssets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		26DB41203036FDEF008AA330 /* Exteations */ = {
+			isa = PBXGroup;
+			children = (
+				26DB4127303701B6008AA330 /* Font+Extension .swift */,
+				26DB412930370216008AA330 /* Text+Extension.swift */,
+			);
+			path = Exteations;
 			sourceTree = "<group>";
 		};
 		77C80FB0DF70CC3AC3CCDB82 /* Frameworks */ = {
@@ -258,8 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DB412A30370216008AA330 /* Text+Extension.swift in Sources */,
+				26DB412C3037039E008AA330 /* OnBoradingScreenViewModel.swift in Sources */,
 				266E18263036E40A00A58704 /* CurrencyConvertAppApp.swift in Sources */,
-				266E18323036E66900A58704 /* SplashView.swift in Sources */,
+				26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */,
+				26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */,
+				26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */,
+				266E18323036E66900A58704 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
