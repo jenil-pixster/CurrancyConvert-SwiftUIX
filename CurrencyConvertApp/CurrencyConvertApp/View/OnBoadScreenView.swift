@@ -16,8 +16,6 @@ struct OnBoadScreenView: View {
             Color.lightGray.ignoresSafeArea()
             
             VStack(spacing: 0) {
-                Spacer()
-                
                 Text("Welcome to\nCurrency Convert!")
                     .appTextStyle(size: 34, weight: .heavy)
                     .multilineTextAlignment(.center)
@@ -57,6 +55,7 @@ struct OnBoadScreenView: View {
                         .navigationBarBackButtonHidden()
                 }
             }
+            .padding(.top, 30)
             .onAppear {
                 viewModel.startEntranceAnimation()
             }
