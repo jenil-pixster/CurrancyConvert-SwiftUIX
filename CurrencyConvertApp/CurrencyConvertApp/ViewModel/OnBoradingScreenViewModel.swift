@@ -13,8 +13,9 @@ final class OnBoardScreenViewModel: ObservableObject {
     @Published var showIllustration = false
     @Published var showDescription = false
     @Published var showButton = false
-    @Published var isPushOnHomeScreen: Bool = false
     @Published var isPulsing = false
+    
+    @AppStorage("isPushOnHomeScreen") var isPushOnHomeScreen: Bool = false
     
     private let titleDelay: Double = 0
     private let illustrationDelay: Double = 0.25

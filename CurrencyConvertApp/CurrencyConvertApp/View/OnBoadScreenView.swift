@@ -52,6 +52,10 @@ struct OnBoadScreenView: View {
                 .padding(.horizontal, 24)
                 .opacity(viewModel.showButton ? 1 : 0)
                 .offset(y: viewModel.showButton ? 0 : 20)
+                .navigationDestination(isPresented: $viewModel.isPushOnHomeScreen) {
+                    HomeView()
+                        .navigationBarBackButtonHidden()
+                }
             }
             .onAppear {
                 viewModel.startEntranceAnimation()

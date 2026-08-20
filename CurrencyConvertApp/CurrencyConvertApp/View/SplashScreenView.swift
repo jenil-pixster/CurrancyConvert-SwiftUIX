@@ -9,17 +9,27 @@ import SwiftUI
 import SwiftyUIX
 
 struct SplashScreenView: View {
+    
     @StateObject private var viewModel = SplashScreenViewModel()
+    @AppStorage("isPushOnHomeScreen") var isPushOnHomeScreen: Bool = false
     
     var body: some View {
-        if viewModel.isActive {
-            OnBoadScreenView()
-                .transition(.opacity)
-        } else {
-            splashView
-                .onAppear {
-                    viewModel.startAnimation()
+        NavigationStack {
+            if viewModel.isActive {
+                Group {
+                    if isPushOnHomeScreen {
+                        HomeView()
+                    } else {
+                        OnBoadScreenView()
+                    }
                 }
+                .transition(.opacity)
+            } else {
+                splashView
+                    .onAppear {
+                        viewModel.startAnimation()
+                    }
+            }
         }
     }
     

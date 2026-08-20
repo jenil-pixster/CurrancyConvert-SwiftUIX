@@ -13,7 +13,7 @@ final class SplashScreenViewModel: ObservableObject {
     @Published var logoOpacity: Double = 0.0
     @Published var isActive: Bool = false
 
-    private let pulseDelay: TimeInterval = 0.7
+    private let pulseDelay: TimeInterval = 0.5
     private let navigationDelay: TimeInterval = 2
 
     func startAnimation() {
@@ -33,7 +33,7 @@ final class SplashScreenViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + pulseDelay) { [weak self] in
             guard let self else { return }
             withAnimation(.easeInOut(duration: 0.4).repeatCount(1, autoreverses: true)) {
-                self.logoScale = 1.08
+                self.logoScale = 1.1
             }
         }
     }
