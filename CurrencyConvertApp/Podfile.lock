@@ -1,0 +1,21 @@
+PODS:
+  - SwiftyUIX (1.2.5)
+
+DEPENDENCIES:
+  - SwiftyUIX (from `https://github.com/Mokshsuthar/SwiftyUIX`)
+
+EXTERNAL SOURCES:
+  SwiftyUIX:
+    :git: https://github.com/Mokshsuthar/SwiftyUIX
+
+CHECKOUT OPTIONS:
+  SwiftyUIX:
+    :commit: 8215f5bfd4931e7920f5880451470551811137bf
+    :git: https://github.com/Mokshsuthar/SwiftyUIX
+
+SPEC CHECKSUMS:
+  SwiftyUIX: 8eedd2462b6f8dd8a1323c85513dca13c052350a
+
+PODFILE CHECKSUM: 8af5bf0c64bba4d66de67871df2f39ae1180e416
+
+COCOAPODS: 1.17.0

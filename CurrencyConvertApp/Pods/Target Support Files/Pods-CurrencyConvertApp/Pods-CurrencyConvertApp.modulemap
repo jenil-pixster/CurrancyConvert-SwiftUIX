@@ -1,0 +1,6 @@
+framework module Pods_CurrencyConvertApp {
+  umbrella header "Pods-CurrencyConvertApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

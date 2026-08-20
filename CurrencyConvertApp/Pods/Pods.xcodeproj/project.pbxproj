@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0073BBAF228D74710902E41B24C7A4DC /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689AD65B2C700530BF19CD27AFA8994 /* Logs.swift */; };
+		0906CD808E8E478ECEFFCE3712756D65 /* HTMLWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D838CE79135765EE81F1A820786E /* HTMLWebView.swift */; };
+		0B60F59ABFFC947D795F44561141AB5A /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8288441EDCA43CFF834C0DEB1B631 /* DateExtensions.swift */; };
+		0CDD8C049E6114EF57216A1BF4FFC680 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090BA7F222EE8D0DD631638B1A37EE00 /* Weak.swift */; };
+		15FE21B5AACE61E6806E1A773068C319 /* Pods-CurrencyConvertApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0074701ABB8F1CB6CD5D8D5F3B46E96D /* Pods-CurrencyConvertApp-dummy.m */; };
+		228C3D33B46E228FAC120D711F0C7B12 /* BounceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F94110DF1BCC4F1C5A38C8ABCAE76F /* BounceButtonStyle.swift */; };
+		2896D85DCE8060D0E16826FAD77EC9ED /* ObservableObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D674DB35E36544E1E423FE76AA652C01 /* ObservableObjectExtension.swift */; };
+		2CE933E203E7DF262B2DD9F31B49F68F /* VariableBlurDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A214003C3D91131A51F3E5C5767C8 /* VariableBlurDirection.swift */; };
+		2DD0C55C686C9513DF18782ED66FF771 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A337BA446988DD6FC4483A8AE95CEE /* ViewExtensions.swift */; };
+		32B114EE7D105D9AB74F4E3A951E5FEA /* AppConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78756D38785A4EE6D4D657787C6357EF /* AppConfigure.swift */; };
+		32D4AA66E97E813272FABEB9392F7BF5 /* PHAssetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059557A9B5BAC4A75DF0BCE9270FFB3 /* PHAssetExtensions.swift */; };
+		340EEDA20A6BFB0E05B6296CAEEDA657 /* WindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84726F43F0F97B85CC0D244FEDF78BA7 /* WindowViewController.swift */; };
+		3465713018B534356922E998345BDB7B /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A601B7A146A719EB0057572B9540F97 /* BorderView.swift */; };
+		4289DB89B821AE53B943FD0DBFF574FC /* TransprantBackgroud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D8950C26CBC8CBBF19CD66681D5A7 /* TransprantBackgroud.swift */; };
+		46156CC985D840D8DB3BE0310B3A9CED /* WindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFF6F8AC37008925C190F9367A2EFF /* WindowExtensions.swift */; };
+		508ACE270C3DAAEEC84C8E9EFD3860C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB74A84DF62E0DBFFA4715EF79E08A1 /* Foundation.framework */; };
+		51F0CC8F00943A6F8032EBC11B276FB7 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59CBD7A501702E39B680DF2752D00E7 /* PassthroughView.swift */; };
+		522E0407B4F69F658AA8CB29DACCA2CF /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8229A7478895F7915FFE334AFD12AC /* HapticFeedbackManager.swift */; };
+		533EC5D05C0C7D085B69983A3C04456F /* UIdeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9077C92A878E0EA7F2225C3E16AEE /* UIdeviceExtensions.swift */; };
+		53C63A64543C085BC4069CDFE09F581B /* PassthroughWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4818E1E322AB6DF5F0737B4456D60D /* PassthroughWindow.swift */; };
+		54C22A5995E19496308366FF5E215926 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0BE7113B618933BA163D4FD9CCD46 /* BlurView.swift */; };
+		56BF88E11EAE0E2B08055FDAC7AB7964 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA1F23032876F1C63AC97357277FE /* NotificationExtension.swift */; };
+		58FAAFE03C80A9AB21879EDD9A3A1791 /* firebaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA164E777BCCFFBF3424D87FBEAF434A /* firebaseExtensions.swift */; };
+		63AC02B970019BFA55207310511E4163 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD023195FF1E2E202C9F92F26AA4303 /* ButtonExtension.swift */; };
+		66BFB8BED9C6C9BBC0F79A22655E6B86 /* SwiftyUIX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F58E58E27563774D8776C8E6C66871 /* SwiftyUIX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67A722B20718BAF2732F282A65A29262 /* SwiftyUIX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 365C33F968C21E4C1CFEA9DB082DFCDD /* SwiftyUIX-dummy.m */; };
+		6C38826528FE3D7BEFAB967D7F6CB3D8 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4DD8EE01655DEFD983AE4E8DD9973 /* Drop.swift */; };
+		74B0C579EC8E81C32A504B2F653823F7 /* UIscreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383366C08988B7787732B5A1E85C194 /* UIscreenExtensions.swift */; };
+		8BC8C7FBE300ECBB1AE1D50CE6A7769C /* BlurBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B70A86743301BF3E471A8C5EE2A1E1 /* BlurBackgroundView.swift */; };
+		8D53A7813C5C4130D3D93E3E1DD2A698 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C87DCBDDCAFCADBC3335F50DB9B4A /* AnimationContext.swift */; };
+		91B95481D24BAA340A6B4A49225E1875 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E11073E6C05BD383EDC84230AFF10E /* Presenter.swift */; };
+		927EF5ACA1D697E9E11A8CACD4E0FB00 /* ForceUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A004234434050B9DB4C012652C025 /* ForceUpdateView.swift */; };
+		934A26D1645649D39547DDAD2B88FC7B /* SKStoreReviewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E8E308EB15832868C9B5F1D2FD0AE /* SKStoreReviewControllerExtension.swift */; };
+		A130B51510CBB2828A91C20AE3425166 /* forceUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D348EC97D454356EDB32C513316AEE /* forceUpdateModel.swift */; };
+		A55C6A2E7C239DFA84EE38B4B68AE0A3 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D18640BD97B695933F2EF2AC2F14 /* DropView.swift */; };
+		A74621BC205AD01476202AE2EDBEF496 /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B35D49E65C07CD89B97796FB1E430 /* ColorsExtensions.swift */; };
+		AB81477610F92FB5134124C54C31288E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB74A84DF62E0DBFFA4715EF79E08A1 /* Foundation.framework */; };
+		AC4EEC4279838B8F2D18839EE138058C /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1854D19928813E41A9962024D1FB95 /* KeyboardMonitor.swift */; };
+		AECBB1822EEDE3AEFCAAF29A7B9951C7 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9F5DF73303E39D71F0EE73D47585B8 /* Animator.swift */; };
+		B15BD5496F162A8AA27D23E45A046A49 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9621B12CE38884F70BB7AF77B7C2F9 /* UIApplicationExtension.swift */; };
+		B8E921005778B0A90F58D50D79170C22 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF507FF9959E68E93269C85175D010AE /* DataExtensions.swift */; };
+		BFE36C1B2DF1931B5441137484AC5188 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC446998CC90C43A24680CBC40206B9 /* UIViewControllerExtension.swift */; };
+		D78E4C583F39A6D09B6D6BD3258E84D0 /* windowNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A142E938F80C4953730D0010B7BFD /* windowNavigationButtons.swift */; };
+		E0E54A7F680286A63ADFF66CBB38C479 /* Pods-CurrencyConvertApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5B422C096EFFD9187F0E021B8171DB /* Pods-CurrencyConvertApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E125524B15B7A49B42971A0E9367C9B9 /* Drops.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146ED89AD8A4F024115C2974E4D2B07 /* Drops.swift */; };
+		EE5B51C6EB99719FC2469DD3D96B1F18 /* ForceUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD9D0B4B223FC3C28B17C7BE899AC8 /* ForceUpdateViewController.swift */; };
+		F2B805DB991CB3E951DC4A9D2ED1BF3D /* Userdefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071AD24D6598E65067F2D7C6D81A1BD /* Userdefaults.swift */; };
+		F4280B4C46C636D4759E18349D121FC5 /* ThreadExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A89C08591A7D504E29B4CC4609707 /* ThreadExtensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4796E679F8272D13989FA1D527A2F9BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8825E5BDAD447AF41F413B6CA0ABD1E0;
+			remoteInfo = SwiftyUIX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		005A214003C3D91131A51F3E5C5767C8 /* VariableBlurDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VariableBlurDirection.swift; path = SwiftyUIX/Classes/Views/VariableBlurDirection.swift; sourceTree = "<group>"; };
+		0074701ABB8F1CB6CD5D8D5F3B46E96D /* Pods-CurrencyConvertApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CurrencyConvertApp-dummy.m"; sourceTree = "<group>"; };
+		0463D838CE79135765EE81F1A820786E /* HTMLWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLWebView.swift; path = SwiftyUIX/Classes/Views/HTMLWebView.swift; sourceTree = "<group>"; };
+		05DFF6F8AC37008925C190F9367A2EFF /* WindowExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WindowExtensions.swift; path = SwiftyUIX/Classes/Extensions/WindowExtensions.swift; sourceTree = "<group>"; };
+		090BA7F222EE8D0DD631638B1A37EE00 /* Weak.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Weak.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/Weak.swift; sourceTree = "<group>"; };
+		0CE9077C92A878E0EA7F2225C3E16AEE /* UIdeviceExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIdeviceExtensions.swift; path = SwiftyUIX/Classes/Extensions/UIdeviceExtensions.swift; sourceTree = "<group>"; };
+		0F325D4AE6CC3793B4DDA4D713A5A6DA /* Pods-CurrencyConvertApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CurrencyConvertApp"; path = Pods_CurrencyConvertApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F9621B12CE38884F70BB7AF77B7C2F9 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIApplicationExtension.swift; path = SwiftyUIX/Classes/Extensions/UIApplicationExtension.swift; sourceTree = "<group>"; };
+		1A601B7A146A719EB0057572B9540F97 /* BorderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BorderView.swift; path = SwiftyUIX/Classes/Views/BorderView.swift; sourceTree = "<group>"; };
+		1C21E849A0FD79C7AD0787249B511649 /* SwiftyUIX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUIX-prefix.pch"; sourceTree = "<group>"; };
+		1CAF7EB913151E47301A83B69F0C0BA0 /* SwiftyUIX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUIX.debug.xcconfig; sourceTree = "<group>"; };
+		21F58E58E27563774D8776C8E6C66871 /* SwiftyUIX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUIX-umbrella.h"; sourceTree = "<group>"; };
+		2AC446998CC90C43A24680CBC40206B9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = SwiftyUIX/Classes/Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		2CB74A84DF62E0DBFFA4715EF79E08A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2EB8288441EDCA43CFF834C0DEB1B631 /* DateExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = SwiftyUIX/Classes/Extensions/DateExtensions.swift; sourceTree = "<group>"; };
+		365C33F968C21E4C1CFEA9DB082DFCDD /* SwiftyUIX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyUIX-dummy.m"; sourceTree = "<group>"; };
+		3A8229A7478895F7915FFE334AFD12AC /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HapticFeedbackManager.swift; path = SwiftyUIX/Classes/ViewModifires/HapticFeedbackManager.swift; sourceTree = "<group>"; };
+		3BF4DD8EE01655DEFD983AE4E8DD9973 /* Drop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Drop.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/Drop.swift; sourceTree = "<group>"; };
+		3E6A26CF7276A2419FA92B792BEE6594 /* SwiftyUIX-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyUIX-Info.plist"; sourceTree = "<group>"; };
+		4383366C08988B7787732B5A1E85C194 /* UIscreenExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIscreenExtensions.swift; path = SwiftyUIX/Classes/Extensions/UIscreenExtensions.swift; sourceTree = "<group>"; };
+		43E0BE7113B618933BA163D4FD9CCD46 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = SwiftyUIX/Classes/Views/BlurView.swift; sourceTree = "<group>"; };
+		48D348EC97D454356EDB32C513316AEE /* forceUpdateModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = forceUpdateModel.swift; path = SwiftyUIX/Classes/ViewModifires/ForceUpdate/forceUpdateModel.swift; sourceTree = "<group>"; };
+		4B9F5DF73303E39D71F0EE73D47585B8 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/Animator.swift; sourceTree = "<group>"; };
+		577DFEA2592A68BBDFE4F9AF96FFA6F5 /* Pods-CurrencyConvertApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CurrencyConvertApp.release.xcconfig"; sourceTree = "<group>"; };
+		6BFD9D0B4B223FC3C28B17C7BE899AC8 /* ForceUpdateViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForceUpdateViewController.swift; path = SwiftyUIX/Classes/ViewModifires/ForceUpdate/ForceUpdateViewController.swift; sourceTree = "<group>"; };
+		6C1854D19928813E41A9962024D1FB95 /* KeyboardMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardMonitor.swift; path = SwiftyUIX/Classes/Extensions/KeyboardMonitor.swift; sourceTree = "<group>"; };
+		6F51A8128C3BC83D6C5042DA652CB279 /* Pods-CurrencyConvertApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CurrencyConvertApp-frameworks.sh"; sourceTree = "<group>"; };
+		7059557A9B5BAC4A75DF0BCE9270FFB3 /* PHAssetExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PHAssetExtensions.swift; path = SwiftyUIX/Classes/Extensions/PHAssetExtensions.swift; sourceTree = "<group>"; };
+		726E8E308EB15832868C9B5F1D2FD0AE /* SKStoreReviewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SKStoreReviewControllerExtension.swift; path = SwiftyUIX/Classes/Extensions/SKStoreReviewControllerExtension.swift; sourceTree = "<group>"; };
+		784D8950C26CBC8CBBF19CD66681D5A7 /* TransprantBackgroud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransprantBackgroud.swift; path = SwiftyUIX/Classes/Views/TransprantBackgroud.swift; sourceTree = "<group>"; };
+		78756D38785A4EE6D4D657787C6357EF /* AppConfigure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppConfigure.swift; path = SwiftyUIX/Classes/AppConfigure.swift; sourceTree = "<group>"; };
+		8071AD24D6598E65067F2D7C6D81A1BD /* Userdefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Userdefaults.swift; path = SwiftyUIX/Classes/Userdefaults.swift; sourceTree = "<group>"; };
+		83A337BA446988DD6FC4483A8AE95CEE /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = SwiftyUIX/Classes/Extensions/ViewExtensions.swift; sourceTree = "<group>"; };
+		84726F43F0F97B85CC0D244FEDF78BA7 /* WindowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WindowViewController.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/WindowViewController.swift; sourceTree = "<group>"; };
+		87F94110DF1BCC4F1C5A38C8ABCAE76F /* BounceButtonStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BounceButtonStyle.swift; path = SwiftyUIX/Classes/Extensions/BounceButtonStyle.swift; sourceTree = "<group>"; };
+		8BD023195FF1E2E202C9F92F26AA4303 /* ButtonExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonExtension.swift; path = SwiftyUIX/Classes/Extensions/ButtonExtension.swift; sourceTree = "<group>"; };
+		8F2A89C08591A7D504E29B4CC4609707 /* ThreadExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadExtensions.swift; path = SwiftyUIX/Classes/Extensions/ThreadExtensions.swift; sourceTree = "<group>"; };
+		93DAA4118FFF72CF44358A1D15A6F647 /* Pods-CurrencyConvertApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CurrencyConvertApp.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A37B57BCE6F7683F339D61CBFED374CE /* Pods-CurrencyConvertApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CurrencyConvertApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A75A142E938F80C4953730D0010B7BFD /* windowNavigationButtons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = windowNavigationButtons.swift; path = SwiftyUIX/Classes/Views/windowNavigationButtons.swift; sourceTree = "<group>"; };
+		AA164E777BCCFFBF3424D87FBEAF434A /* firebaseExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = firebaseExtensions.swift; path = SwiftyUIX/Classes/Extensions/ExtraExtensions/firebaseExtensions.swift; sourceTree = "<group>"; };
+		AA2B35D49E65C07CD89B97796FB1E430 /* ColorsExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorsExtensions.swift; path = SwiftyUIX/Classes/Extensions/ColorsExtensions.swift; sourceTree = "<group>"; };
+		AE4818E1E322AB6DF5F0737B4456D60D /* PassthroughWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughWindow.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/PassthroughWindow.swift; sourceTree = "<group>"; };
+		B59CBD7A501702E39B680DF2752D00E7 /* PassthroughView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughView.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/PassthroughView.swift; sourceTree = "<group>"; };
+		BF507FF9959E68E93269C85175D010AE /* DataExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataExtensions.swift; path = SwiftyUIX/Classes/Extensions/DataExtensions.swift; sourceTree = "<group>"; };
+		C049D18640BD97B695933F2EF2AC2F14 /* DropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropView.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/DropView.swift; sourceTree = "<group>"; };
+		C146ED89AD8A4F024115C2974E4D2B07 /* Drops.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Drops.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/Drops.swift; sourceTree = "<group>"; };
+		C204D59551FC519B22094DC4F5A07C35 /* SwiftyUIX */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyUIX; path = SwiftyUIX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0CDD8A57696C4ABD6059AFD9817A9A /* Pods-CurrencyConvertApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CurrencyConvertApp-Info.plist"; sourceTree = "<group>"; };
+		CF3A004234434050B9DB4C012652C025 /* ForceUpdateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForceUpdateView.swift; path = SwiftyUIX/Classes/ViewModifires/ForceUpdate/ForceUpdateView.swift; sourceTree = "<group>"; };
+		D674DB35E36544E1E423FE76AA652C01 /* ObservableObjectExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableObjectExtension.swift; path = SwiftyUIX/Classes/Extensions/ObservableObjectExtension.swift; sourceTree = "<group>"; };
+		DA922C82E4787DFBA00E28AF81DAB376 /* Pods-CurrencyConvertApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CurrencyConvertApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DE5B422C096EFFD9187F0E021B8171DB /* Pods-CurrencyConvertApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CurrencyConvertApp-umbrella.h"; sourceTree = "<group>"; };
+		E2B70A86743301BF3E471A8C5EE2A1E1 /* BlurBackgroundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurBackgroundView.swift; path = SwiftyUIX/Classes/Views/BlurBackgroundView.swift; sourceTree = "<group>"; };
+		E2E11073E6C05BD383EDC84230AFF10E /* Presenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/Presenter.swift; sourceTree = "<group>"; };
+		E7AB1589B4A0E1345E8D9F9B1A3CD29D /* SwiftyUIX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyUIX.modulemap; sourceTree = "<group>"; };
+		EBCAA1F23032876F1C63AC97357277FE /* NotificationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationExtension.swift; path = SwiftyUIX/Classes/Extensions/NotificationExtension.swift; sourceTree = "<group>"; };
+		EC3C87DCBDDCAFCADBC3335F50DB9B4A /* AnimationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationContext.swift; path = SwiftyUIX/Classes/ViewModifires/Drops/AnimationContext.swift; sourceTree = "<group>"; };
+		F35185025C321B79400F2AE7ED825048 /* Pods-CurrencyConvertApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CurrencyConvertApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		F689AD65B2C700530BF19CD27AFA8994 /* Logs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logs.swift; path = SwiftyUIX/Classes/Logs/Logs.swift; sourceTree = "<group>"; };
+		FC79C901F50C5E549B779298A0EF7F10 /* SwiftyUIX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUIX.release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CFD87F32A8B618792016D768F3860A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508ACE270C3DAAEEC84C8E9EFD3860C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		960B6C6488DA28C8B32FDCFBA6DF3F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB81477610F92FB5134124C54C31288E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		119B64B81F62A6AEA9A3FAD9313F73F6 /* SwiftyUIX */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C87DCBDDCAFCADBC3335F50DB9B4A /* AnimationContext.swift */,
+				4B9F5DF73303E39D71F0EE73D47585B8 /* Animator.swift */,
+				78756D38785A4EE6D4D657787C6357EF /* AppConfigure.swift */,
+				E2B70A86743301BF3E471A8C5EE2A1E1 /* BlurBackgroundView.swift */,
+				43E0BE7113B618933BA163D4FD9CCD46 /* BlurView.swift */,
+				1A601B7A146A719EB0057572B9540F97 /* BorderView.swift */,
+				87F94110DF1BCC4F1C5A38C8ABCAE76F /* BounceButtonStyle.swift */,
+				8BD023195FF1E2E202C9F92F26AA4303 /* ButtonExtension.swift */,
+				AA2B35D49E65C07CD89B97796FB1E430 /* ColorsExtensions.swift */,
+				BF507FF9959E68E93269C85175D010AE /* DataExtensions.swift */,
+				2EB8288441EDCA43CFF834C0DEB1B631 /* DateExtensions.swift */,
+				3BF4DD8EE01655DEFD983AE4E8DD9973 /* Drop.swift */,
+				C146ED89AD8A4F024115C2974E4D2B07 /* Drops.swift */,
+				C049D18640BD97B695933F2EF2AC2F14 /* DropView.swift */,
+				AA164E777BCCFFBF3424D87FBEAF434A /* firebaseExtensions.swift */,
+				48D348EC97D454356EDB32C513316AEE /* forceUpdateModel.swift */,
+				CF3A004234434050B9DB4C012652C025 /* ForceUpdateView.swift */,
+				6BFD9D0B4B223FC3C28B17C7BE899AC8 /* ForceUpdateViewController.swift */,
+				3A8229A7478895F7915FFE334AFD12AC /* HapticFeedbackManager.swift */,
+				0463D838CE79135765EE81F1A820786E /* HTMLWebView.swift */,
+				6C1854D19928813E41A9962024D1FB95 /* KeyboardMonitor.swift */,
+				F689AD65B2C700530BF19CD27AFA8994 /* Logs.swift */,
+				EBCAA1F23032876F1C63AC97357277FE /* NotificationExtension.swift */,
+				D674DB35E36544E1E423FE76AA652C01 /* ObservableObjectExtension.swift */,
+				B59CBD7A501702E39B680DF2752D00E7 /* PassthroughView.swift */,
+				AE4818E1E322AB6DF5F0737B4456D60D /* PassthroughWindow.swift */,
+				7059557A9B5BAC4A75DF0BCE9270FFB3 /* PHAssetExtensions.swift */,
+				E2E11073E6C05BD383EDC84230AFF10E /* Presenter.swift */,
+				726E8E308EB15832868C9B5F1D2FD0AE /* SKStoreReviewControllerExtension.swift */,
+				8F2A89C08591A7D504E29B4CC4609707 /* ThreadExtensions.swift */,
+				784D8950C26CBC8CBBF19CD66681D5A7 /* TransprantBackgroud.swift */,
+				0F9621B12CE38884F70BB7AF77B7C2F9 /* UIApplicationExtension.swift */,
+				0CE9077C92A878E0EA7F2225C3E16AEE /* UIdeviceExtensions.swift */,
+				4383366C08988B7787732B5A1E85C194 /* UIscreenExtensions.swift */,
+				2AC446998CC90C43A24680CBC40206B9 /* UIViewControllerExtension.swift */,
+				8071AD24D6598E65067F2D7C6D81A1BD /* Userdefaults.swift */,
+				005A214003C3D91131A51F3E5C5767C8 /* VariableBlurDirection.swift */,
+				83A337BA446988DD6FC4483A8AE95CEE /* ViewExtensions.swift */,
+				090BA7F222EE8D0DD631638B1A37EE00 /* Weak.swift */,
+				05DFF6F8AC37008925C190F9367A2EFF /* WindowExtensions.swift */,
+				A75A142E938F80C4953730D0010B7BFD /* windowNavigationButtons.swift */,
+				84726F43F0F97B85CC0D244FEDF78BA7 /* WindowViewController.swift */,
+				B07E31FDA91EE5683946162E3B62500D /* Support Files */,
+			);
+			name = SwiftyUIX;
+			path = SwiftyUIX;
+			sourceTree = "<group>";
+		};
+		44195D3DA69AA1100D47F98C503E0359 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F325D4AE6CC3793B4DDA4D713A5A6DA /* Pods-CurrencyConvertApp */,
+				C204D59551FC519B22094DC4F5A07C35 /* SwiftyUIX */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59BE009BE85876A159DDA8752F097B6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				119B64B81F62A6AEA9A3FAD9313F73F6 /* SwiftyUIX */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7AECBA61365544F357B06DE1C8710425 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2CB74A84DF62E0DBFFA4715EF79E08A1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		86F9CDF64DBFDB427FF31A8F673EDD64 /* Pods-CurrencyConvertApp */ = {
+			isa = PBXGroup;
+			children = (
+				93DAA4118FFF72CF44358A1D15A6F647 /* Pods-CurrencyConvertApp.modulemap */,
+				A37B57BCE6F7683F339D61CBFED374CE /* Pods-CurrencyConvertApp-acknowledgements.markdown */,
+				F35185025C321B79400F2AE7ED825048 /* Pods-CurrencyConvertApp-acknowledgements.plist */,
+				0074701ABB8F1CB6CD5D8D5F3B46E96D /* Pods-CurrencyConvertApp-dummy.m */,
+				6F51A8128C3BC83D6C5042DA652CB279 /* Pods-CurrencyConvertApp-frameworks.sh */,
+				CF0CDD8A57696C4ABD6059AFD9817A9A /* Pods-CurrencyConvertApp-Info.plist */,
+				DE5B422C096EFFD9187F0E021B8171DB /* Pods-CurrencyConvertApp-umbrella.h */,
+				DA922C82E4787DFBA00E28AF81DAB376 /* Pods-CurrencyConvertApp.debug.xcconfig */,
+				577DFEA2592A68BBDFE4F9AF96FFA6F5 /* Pods-CurrencyConvertApp.release.xcconfig */,
+			);
+			name = "Pods-CurrencyConvertApp";
+			path = "Target Support Files/Pods-CurrencyConvertApp";
+			sourceTree = "<group>";
+		};
+		B07E31FDA91EE5683946162E3B62500D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7AB1589B4A0E1345E8D9F9B1A3CD29D /* SwiftyUIX.modulemap */,
+				365C33F968C21E4C1CFEA9DB082DFCDD /* SwiftyUIX-dummy.m */,
+				3E6A26CF7276A2419FA92B792BEE6594 /* SwiftyUIX-Info.plist */,
+				1C21E849A0FD79C7AD0787249B511649 /* SwiftyUIX-prefix.pch */,
+				21F58E58E27563774D8776C8E6C66871 /* SwiftyUIX-umbrella.h */,
+				1CAF7EB913151E47301A83B69F0C0BA0 /* SwiftyUIX.debug.xcconfig */,
+				FC79C901F50C5E549B779298A0EF7F10 /* SwiftyUIX.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyUIX";
+			sourceTree = "<group>";
+		};
+		BD52130532D2A2F010D31BE5879CC585 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				86F9CDF64DBFDB427FF31A8F673EDD64 /* Pods-CurrencyConvertApp */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				59BE009BE85876A159DDA8752F097B6A /* Pods */,
+				44195D3DA69AA1100D47F98C503E0359 /* Products */,
+				BD52130532D2A2F010D31BE5879CC585 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AECBA61365544F357B06DE1C8710425 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		19B61A69A395CF522B3A5E6E3371EBD1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E54A7F680286A63ADFF66CBB38C479 /* Pods-CurrencyConvertApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E0B35CD501EA3AD4FE1574F3E794E74 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BFB8BED9C6C9BBC0F79A22655E6B86 /* SwiftyUIX-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8825E5BDAD447AF41F413B6CA0ABD1E0 /* SwiftyUIX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C044D4CE4A175D94909A33001900F1E /* Build configuration list for PBXNativeTarget "SwiftyUIX" */;
+			buildPhases = (
+				1E0B35CD501EA3AD4FE1574F3E794E74 /* Headers */,
+				64DC73B937A7A79E2A4A7403EDE58633 /* Sources */,
+				7CFD87F32A8B618792016D768F3860A4 /* Frameworks */,
+				C2B6C37094B9E45FCE12EDB9C2DF03E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyUIX;
+			productName = SwiftyUIX;
+			productReference = C204D59551FC519B22094DC4F5A07C35 /* SwiftyUIX */;
+			productType = "com.apple.product-type.framework";
+		};
+		FA0B75054E674D62861E2815C63C0700 /* Pods-CurrencyConvertApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07F8D3FBC2E7AE36277D3E24EA96FE1F /* Build configuration list for PBXNativeTarget "Pods-CurrencyConvertApp" */;
+			buildPhases = (
+				19B61A69A395CF522B3A5E6E3371EBD1 /* Headers */,
+				FF69CC4D2F368C88D9CE242D6D670763 /* Sources */,
+				960B6C6488DA28C8B32FDCFBA6DF3F9F /* Frameworks */,
+				750FBB5375F577E40D7D94961C3D291F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4F6F3EEE5CCE7FD241080085793CEBF /* PBXTargetDependency */,
+			);
+			name = "Pods-CurrencyConvertApp";
+			productName = Pods_CurrencyConvertApp;
+			productReference = 0F325D4AE6CC3793B4DDA4D713A5A6DA /* Pods-CurrencyConvertApp */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 100;
+			productRefGroup = 44195D3DA69AA1100D47F98C503E0359 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA0B75054E674D62861E2815C63C0700 /* Pods-CurrencyConvertApp */,
+				8825E5BDAD447AF41F413B6CA0ABD1E0 /* SwiftyUIX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		750FBB5375F577E40D7D94961C3D291F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B6C37094B9E45FCE12EDB9C2DF03E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64DC73B937A7A79E2A4A7403EDE58633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D53A7813C5C4130D3D93E3E1DD2A698 /* AnimationContext.swift in Sources */,
+				AECBB1822EEDE3AEFCAAF29A7B9951C7 /* Animator.swift in Sources */,
+				32B114EE7D105D9AB74F4E3A951E5FEA /* AppConfigure.swift in Sources */,
+				8BC8C7FBE300ECBB1AE1D50CE6A7769C /* BlurBackgroundView.swift in Sources */,
+				54C22A5995E19496308366FF5E215926 /* BlurView.swift in Sources */,
+				3465713018B534356922E998345BDB7B /* BorderView.swift in Sources */,
+				228C3D33B46E228FAC120D711F0C7B12 /* BounceButtonStyle.swift in Sources */,
+				63AC02B970019BFA55207310511E4163 /* ButtonExtension.swift in Sources */,
+				A74621BC205AD01476202AE2EDBEF496 /* ColorsExtensions.swift in Sources */,
+				B8E921005778B0A90F58D50D79170C22 /* DataExtensions.swift in Sources */,
+				0B60F59ABFFC947D795F44561141AB5A /* DateExtensions.swift in Sources */,
+				6C38826528FE3D7BEFAB967D7F6CB3D8 /* Drop.swift in Sources */,
+				E125524B15B7A49B42971A0E9367C9B9 /* Drops.swift in Sources */,
+				A55C6A2E7C239DFA84EE38B4B68AE0A3 /* DropView.swift in Sources */,
+				58FAAFE03C80A9AB21879EDD9A3A1791 /* firebaseExtensions.swift in Sources */,
+				A130B51510CBB2828A91C20AE3425166 /* forceUpdateModel.swift in Sources */,
+				927EF5ACA1D697E9E11A8CACD4E0FB00 /* ForceUpdateView.swift in Sources */,
+				EE5B51C6EB99719FC2469DD3D96B1F18 /* ForceUpdateViewController.swift in Sources */,
+				522E0407B4F69F658AA8CB29DACCA2CF /* HapticFeedbackManager.swift in Sources */,
+				0906CD808E8E478ECEFFCE3712756D65 /* HTMLWebView.swift in Sources */,
+				AC4EEC4279838B8F2D18839EE138058C /* KeyboardMonitor.swift in Sources */,
+				0073BBAF228D74710902E41B24C7A4DC /* Logs.swift in Sources */,
+				56BF88E11EAE0E2B08055FDAC7AB7964 /* NotificationExtension.swift in Sources */,
+				2896D85DCE8060D0E16826FAD77EC9ED /* ObservableObjectExtension.swift in Sources */,
+				51F0CC8F00943A6F8032EBC11B276FB7 /* PassthroughView.swift in Sources */,
+				53C63A64543C085BC4069CDFE09F581B /* PassthroughWindow.swift in Sources */,
+				32D4AA66E97E813272FABEB9392F7BF5 /* PHAssetExtensions.swift in Sources */,
+				91B95481D24BAA340A6B4A49225E1875 /* Presenter.swift in Sources */,
+				934A26D1645649D39547DDAD2B88FC7B /* SKStoreReviewControllerExtension.swift in Sources */,
+				67A722B20718BAF2732F282A65A29262 /* SwiftyUIX-dummy.m in Sources */,
+				F4280B4C46C636D4759E18349D121FC5 /* ThreadExtensions.swift in Sources */,
+				4289DB89B821AE53B943FD0DBFF574FC /* TransprantBackgroud.swift in Sources */,
+				B15BD5496F162A8AA27D23E45A046A49 /* UIApplicationExtension.swift in Sources */,
+				533EC5D05C0C7D085B69983A3C04456F /* UIdeviceExtensions.swift in Sources */,
+				74B0C579EC8E81C32A504B2F653823F7 /* UIscreenExtensions.swift in Sources */,
+				BFE36C1B2DF1931B5441137484AC5188 /* UIViewControllerExtension.swift in Sources */,
+				F2B805DB991CB3E951DC4A9D2ED1BF3D /* Userdefaults.swift in Sources */,
+				2CE933E203E7DF262B2DD9F31B49F68F /* VariableBlurDirection.swift in Sources */,
+				2DD0C55C686C9513DF18782ED66FF771 /* ViewExtensions.swift in Sources */,
+				0CDD8C049E6114EF57216A1BF4FFC680 /* Weak.swift in Sources */,
+				46156CC985D840D8DB3BE0310B3A9CED /* WindowExtensions.swift in Sources */,
+				D78E4C583F39A6D09B6D6BD3258E84D0 /* windowNavigationButtons.swift in Sources */,
+				340EEDA20A6BFB0E05B6296CAEEDA657 /* WindowViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF69CC4D2F368C88D9CE242D6D670763 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FE21B5AACE61E6806E1A773068C319 /* Pods-CurrencyConvertApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4F6F3EEE5CCE7FD241080085793CEBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyUIX;
+			target = 8825E5BDAD447AF41F413B6CA0ABD1E0 /* SwiftyUIX */;
+			targetProxy = 4796E679F8272D13989FA1D527A2F9BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2F3471433122034D9C9A97310DCC21D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA922C82E4787DFBA00E28AF81DAB376 /* Pods-CurrencyConvertApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CurrencyConvertApp/Pods-CurrencyConvertApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CurrencyConvertApp/Pods-CurrencyConvertApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		80A7F116B233499476D4AEF01573F6B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577DFEA2592A68BBDFE4F9AF96FFA6F5 /* Pods-CurrencyConvertApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-CurrencyConvertApp/Pods-CurrencyConvertApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CurrencyConvertApp/Pods-CurrencyConvertApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CC7EBBD2DEF34B4430AA7EC0B3DA809B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CAF7EB913151E47301A83B69F0C0BA0 /* SwiftyUIX.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyUIX/SwiftyUIX-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SwiftyUIX/SwiftyUIX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyUIX/SwiftyUIX.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyUIX;
+				PRODUCT_NAME = SwiftyUIX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F35861C3143D27B97EF99DEABE4A5968 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC79C901F50C5E549B779298A0EF7F10 /* SwiftyUIX.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyUIX/SwiftyUIX-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SwiftyUIX/SwiftyUIX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyUIX/SwiftyUIX.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyUIX;
+				PRODUCT_NAME = SwiftyUIX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07F8D3FBC2E7AE36277D3E24EA96FE1F /* Build configuration list for PBXNativeTarget "Pods-CurrencyConvertApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F3471433122034D9C9A97310DCC21D2 /* Debug */,
+				80A7F116B233499476D4AEF01573F6B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
+				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C044D4CE4A175D94909A33001900F1E /* Build configuration list for PBXNativeTarget "SwiftyUIX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC7EBBD2DEF34B4430AA7EC0B3DA809B /* Debug */,
+				F35861C3143D27B97EF99DEABE4A5968 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
