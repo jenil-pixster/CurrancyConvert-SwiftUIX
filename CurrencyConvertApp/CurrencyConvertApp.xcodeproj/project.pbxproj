@@ -10,6 +10,7 @@
 		266E18253036E40A00A58704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E18223036E40A00A58704 /* ContentView.swift */; };
 		266E18263036E40A00A58704 /* CurrencyConvertAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */; };
 		266E18273036E40A00A58704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266E18213036E40A00A58704 /* Assets.xcassets */; };
+		266E18303036E50300A58704 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266E182F3036E50300A58704 /* ColorAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		266E18213036E40A00A58704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		266E18223036E40A00A58704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertAppApp.swift; sourceTree = "<group>"; };
+		266E182F3036E50300A58704 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,11 +51,68 @@
 		266E18243036E40A00A58704 /* CurrencyConvertApp */ = {
 			isa = PBXGroup;
 			children = (
-				266E18213036E40A00A58704 /* Assets.xcassets */,
-				266E18223036E40A00A58704 /* ContentView.swift */,
-				266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */,
+				266E182D3036E4E400A58704 /* App */,
+				266E182C3036E4D900A58704 /* Config */,
+				266E182B3036E4C300A58704 /* Utilities */,
+				266E182A3036E4BE00A58704 /* Model */,
+				266E18293036E4B600A58704 /* ViewModel */,
+				266E18283036E4A300A58704 /* View */,
 			);
 			path = CurrencyConvertApp;
+			sourceTree = "<group>";
+		};
+		266E18283036E4A300A58704 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				266E18223036E40A00A58704 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		266E18293036E4B600A58704 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		266E182A3036E4BE00A58704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		266E182B3036E4C300A58704 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		266E182C3036E4D900A58704 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				266E182E3036E4E800A58704 /* Assets */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		266E182D3036E4E400A58704 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		266E182E3036E4E800A58704 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				266E18213036E40A00A58704 /* Assets.xcassets */,
+				266E182F3036E50300A58704 /* ColorAssets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266E18303036E50300A58704 /* ColorAssets.xcassets in Resources */,
 				266E18273036E40A00A58704 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
