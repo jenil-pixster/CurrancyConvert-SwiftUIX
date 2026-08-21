@@ -47,6 +47,15 @@ struct HomeView: View {
                     .zIndex(20)
             }
         }
+        .fullScreenCover(isPresented: $viewModel.isOpenPayWallView, content: {
+            PremiumPurchaseView(onCloseEvent: {
+                viewModel.isOpenPayWallView = false
+            })
+                .navigationBarBackButtonHidden()
+        })
+        .onAppear() {
+            viewModel.delayOpenPayWallScreen()
+        }
     }
 
     // MARK: - Pad overlay + backdrop

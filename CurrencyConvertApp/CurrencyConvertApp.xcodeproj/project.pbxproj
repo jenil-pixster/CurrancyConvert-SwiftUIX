@@ -10,6 +10,7 @@
 		2646C64A3038219500DB9D07 /* Color + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646C6493038218E00DB9D07 /* Color + Extension.swift */; };
 		2646C64C3038225C00DB9D07 /* Userdefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646C64B3038225600DB9D07 /* Userdefaults.swift */; };
 		2646C64E303827D600DB9D07 /* NotificationObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2646C64D303827CD00DB9D07 /* NotificationObservers.swift */; };
+		26642CF430387FF0004C2346 /* SubscriptionPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26642CF330387FF0004C2346 /* SubscriptionPlanModel.swift */; };
 		266E18263036E40A00A58704 /* CurrencyConvertAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */; };
 		266E18273036E40A00A58704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266E18213036E40A00A58704 /* Assets.xcassets */; };
 		266E18303036E50300A58704 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266E182F3036E50300A58704 /* ColorAssets.xcassets */; };
@@ -29,9 +30,18 @@
 		2682F2B030373C5C008E5F27 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2682F2AF30373C5C008E5F27 /* AppIcon.icon */; };
 		26B60A3D303854F90088CB45 /* PremiumPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A3C303854F80088CB45 /* PremiumPurchaseView.swift */; };
 		26B60A3F3038567A0088CB45 /* PurchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A3E3038567A0088CB45 /* PurchesViewModel.swift */; };
-		26B60A4130385C0B0088CB45 /* SubscriptionPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4030385C0B0088CB45 /* SubscriptionPlanModel.swift */; };
 		26B60A4330385ECE0088CB45 /* PlanRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4230385ECE0088CB45 /* PlanRowItem.swift */; };
-		26B60A4730386C2B0088CB45 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4630386C2B0088CB45 /* Constant.swift */; };
+		26B60A4730386C2B0088CB45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4630386C2B0088CB45 /* Constants.swift */; };
+		26B60A65303871600088CB45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A643038715F0088CB45 /* AppDelegate.swift */; };
+		26B60A70303871760088CB45 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A66303871760088CB45 /* extension.swift */; };
+		26B60A71303871760088CB45 /* PurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A6A303871760088CB45 /* PurchaseModel.swift */; };
+		26B60A72303871760088CB45 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A68303871760088CB45 /* Log.swift */; };
+		26B60A73303871760088CB45 /* PurchaseUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A6B303871760088CB45 /* PurchaseUserDefaults.swift */; };
+		26B60A74303871760088CB45 /* string + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A6E303871760088CB45 /* string + Extensions.swift */; };
+		26B60A75303871760088CB45 /* QonversionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A6C303871760088CB45 /* QonversionModel.swift */; };
+		26B60A76303871760088CB45 /* PurchaseIdData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A69303871760088CB45 /* PurchaseIdData.swift */; };
+		26B60A77303871760088CB45 /* SingularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A6D303871760088CB45 /* SingularModel.swift */; };
+		26B60A7D303875160088CB45 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26B60A7C303875160088CB45 /* SwiftyStoreKit */; };
 		26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */; };
 		26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */; };
 		26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB4127303701B6008AA330 /* Font+Extension .swift */; };
@@ -45,6 +55,7 @@
 		2646C6493038218E00DB9D07 /* Color + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extension.swift"; sourceTree = "<group>"; };
 		2646C64B3038225600DB9D07 /* Userdefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdefaults.swift; sourceTree = "<group>"; };
 		2646C64D303827CD00DB9D07 /* NotificationObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObservers.swift; sourceTree = "<group>"; };
+		26642CF330387FF0004C2346 /* SubscriptionPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlanModel.swift; sourceTree = "<group>"; };
 		266E18133036E3D700A58704 /* CurrencyConvertApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConvertApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		266E18213036E40A00A58704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertAppApp.swift; sourceTree = "<group>"; };
@@ -65,9 +76,17 @@
 		2682F2AF30373C5C008E5F27 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		26B60A3C303854F80088CB45 /* PremiumPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPurchaseView.swift; sourceTree = "<group>"; };
 		26B60A3E3038567A0088CB45 /* PurchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchesViewModel.swift; sourceTree = "<group>"; };
-		26B60A4030385C0B0088CB45 /* SubscriptionPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlanModel.swift; sourceTree = "<group>"; };
 		26B60A4230385ECE0088CB45 /* PlanRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRowItem.swift; sourceTree = "<group>"; };
-		26B60A4630386C2B0088CB45 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		26B60A4630386C2B0088CB45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		26B60A643038715F0088CB45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26B60A66303871760088CB45 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		26B60A68303871760088CB45 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		26B60A69303871760088CB45 /* PurchaseIdData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseIdData.swift; sourceTree = "<group>"; };
+		26B60A6A303871760088CB45 /* PurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModel.swift; sourceTree = "<group>"; };
+		26B60A6B303871760088CB45 /* PurchaseUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseUserDefaults.swift; sourceTree = "<group>"; };
+		26B60A6C303871760088CB45 /* QonversionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QonversionModel.swift; sourceTree = "<group>"; };
+		26B60A6D303871760088CB45 /* SingularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularModel.swift; sourceTree = "<group>"; };
+		26B60A6E303871760088CB45 /* string + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "string + Extensions.swift"; sourceTree = "<group>"; };
 		26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoadScreenView.swift; sourceTree = "<group>"; };
 		26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		26DB4127303701B6008AA330 /* Font+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension .swift"; sourceTree = "<group>"; };
@@ -85,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				916AC7EF8277E2B35F06331D /* Pods_CurrencyConvertApp.framework in Frameworks */,
+				26B60A7D303875160088CB45 /* SwiftyStoreKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,11 +173,12 @@
 		266E182A3036E4BE00A58704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26B60A6F303871760088CB45 /* PurchaseModel */,
 				2682F28C30371560008E5F27 /* CurrancyListModel.swift */,
 				2682F29A30371DEB008E5F27 /* ExchangeRateResponseModel.swift */,
 				2682F2A23037261D008E5F27 /* HistoryItemModel.swift */,
 				2682F2A930372D03008E5F27 /* CustomPadModel.swift */,
-				26B60A4030385C0B0088CB45 /* SubscriptionPlanModel.swift */,
+				26642CF330387FF0004C2346 /* SubscriptionPlanModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				266E18233036E40A00A58704 /* CurrencyConvertAppApp.swift */,
+				26B60A643038715F0088CB45 /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -203,7 +225,7 @@
 				2646C64D303827CD00DB9D07 /* NotificationObservers.swift */,
 				2682F28F30371590008E5F27 /* Enums.swift */,
 				2646C64B3038225600DB9D07 /* Userdefaults.swift */,
-				26B60A4630386C2B0088CB45 /* Constant.swift */,
+				26B60A4630386C2B0088CB45 /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -223,6 +245,21 @@
 				2682F2A7303728B3008E5F27 /* ActionButton.swift */,
 			);
 			path = ReuseableView;
+			sourceTree = "<group>";
+		};
+		26B60A6F303871760088CB45 /* PurchaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				26B60A66303871760088CB45 /* extension.swift */,
+				26B60A68303871760088CB45 /* Log.swift */,
+				26B60A69303871760088CB45 /* PurchaseIdData.swift */,
+				26B60A6A303871760088CB45 /* PurchaseModel.swift */,
+				26B60A6B303871760088CB45 /* PurchaseUserDefaults.swift */,
+				26B60A6C303871760088CB45 /* QonversionModel.swift */,
+				26B60A6D303871760088CB45 /* SingularModel.swift */,
+				26B60A6E303871760088CB45 /* string + Extensions.swift */,
+			);
+			path = PurchaseModel;
 			sourceTree = "<group>";
 		};
 		26DB41203036FDEF008AA330 /* Exteations */ = {
@@ -298,6 +335,9 @@
 			);
 			mainGroup = 266E180A3036E3D700A58704;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				26B60A7B303875160088CB45 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 266E18143036E3D700A58704 /* Products */;
 			projectDirPath = "";
@@ -376,16 +416,24 @@
 				2682F2A63037284F008E5F27 /* IconButton.swift in Sources */,
 				26B60A3D303854F90088CB45 /* PremiumPurchaseView.swift in Sources */,
 				2682F29D30371E0C008E5F27 /* ExchangeRateService.swift in Sources */,
+				26B60A65303871600088CB45 /* AppDelegate.swift in Sources */,
 				26DB412A30370216008AA330 /* Text+Extension.swift in Sources */,
 				26DB412C3037039E008AA330 /* OnBoradingScreenViewModel.swift in Sources */,
 				266E18263036E40A00A58704 /* CurrencyConvertAppApp.swift in Sources */,
+				26B60A70303871760088CB45 /* extension.swift in Sources */,
+				26B60A71303871760088CB45 /* PurchaseModel.swift in Sources */,
+				26B60A72303871760088CB45 /* Log.swift in Sources */,
+				26B60A73303871760088CB45 /* PurchaseUserDefaults.swift in Sources */,
+				26B60A74303871760088CB45 /* string + Extensions.swift in Sources */,
+				26B60A75303871760088CB45 /* QonversionModel.swift in Sources */,
+				26B60A76303871760088CB45 /* PurchaseIdData.swift in Sources */,
+				26B60A77303871760088CB45 /* SingularModel.swift in Sources */,
 				26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */,
 				26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */,
-				26B60A4730386C2B0088CB45 /* Constant.swift in Sources */,
+				26B60A4730386C2B0088CB45 /* Constants.swift in Sources */,
 				2682F2A8303728B3008E5F27 /* ActionButton.swift in Sources */,
 				2646C64E303827D600DB9D07 /* NotificationObservers.swift in Sources */,
 				2646C64C3038225C00DB9D07 /* Userdefaults.swift in Sources */,
-				26B60A4130385C0B0088CB45 /* SubscriptionPlanModel.swift in Sources */,
 				2646C64A3038219500DB9D07 /* Color + Extension.swift in Sources */,
 				26DB413030370FA6008AA330 /* HomeView.swift in Sources */,
 				26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */,
@@ -399,6 +447,7 @@
 				2682F2AE30372D5B008E5F27 /* CustomPadView.swift in Sources */,
 				2682F2A130371E5C008E5F27 /* HistoryRowView.swift in Sources */,
 				26B60A3F3038567A0088CB45 /* PurchesViewModel.swift in Sources */,
+				26642CF430387FF0004C2346 /* SubscriptionPlanModel.swift in Sources */,
 				2682F29030371590008E5F27 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +679,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26B60A7B303875160088CB45 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26B60A7C303875160088CB45 /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26B60A7B303875160088CB45 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 266E180B3036E3D700A58704 /* Project object */;
 }

@@ -7,16 +7,23 @@
 
 import SwiftUI
 
+enum purchesType {
+    case yearly
+    case weekly
+}
+
 struct PlanRowItem: View {
-    let plan: SubscriptionPlan
+    let title: String
+    let subTitle: String
     let isSelected: Bool
+    let isSelectedYearly: Bool
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text(plan.title)
+                Text(title)
                     .font(.system(size: 17, weight: .bold))
-                Text(plan.subtitle)
+                Text(subTitle)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
@@ -33,15 +40,13 @@ struct PlanRowItem: View {
                 .stroke(isSelected ? Color.blue : Color(.systemGray4), lineWidth: isSelected ? 2 : 1)
         )
         .overlay(alignment: .topTrailing) {
-            if let badge = plan.badge {
-                Text(badge)
-                    .font(.caption2.bold())
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(Capsule().fill(Color.blue))
-                    .offset(x: -12, y: -10)
-            }
+            Text(isSelectedYearly ? "Best Value" : "Free Trial")
+                .font(.caption2.bold())
+                .foregroundColor(.white)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 4)
+                .background(Capsule().fill(Color.blue))
+                .offset(x: -12, y: -10)
         }
     }
 

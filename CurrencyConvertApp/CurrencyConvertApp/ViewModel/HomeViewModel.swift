@@ -21,6 +21,7 @@ final class HomeViewModel: ObservableObject {
     @Published var padMode: PadMode = .deposit
     @Published var errorMessage: String?
     @Published var headerHeight: CGFloat = 0
+    @Published var isOpenPayWallView: Bool = false
     
     var appConfig : AppConfiguration = Config.appConfiguration
     private let service = ExchangeRateService.shared
@@ -44,6 +45,13 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
+    //MARK: Paywall screen manger
+    func delayOpenPayWallScreen() {
+        Thread.runAfter(3) {
+            self.isOpenPayWallView = true
+        }
+    }
+    
     // MARK: - Transaction entry point (called from CustomPadView's confirm)
     
     func confirmTransaction(amount: Double, currency: String, mode: PadMode) async -> PadConfirmResult {
@@ -57,7 +65,7 @@ final class HomeViewModel: ObservableObject {
     
     
     func didScroll(_ value: CGFloat) {
-        Log.info(value.description)
+//        Log.info(value.description)
     }
     
     private func performDeposit(amount: Double, currency: String) async -> PadConfirmResult {
@@ -89,26 +97,26 @@ final class HomeViewModel: ObservableObject {
                 type: .deposit
             )
             historyItems.insert(item, at: 0)
-            Log.info("Add data in history list.")
+//            Log.info("Add data in history list.")
             return .success
         } catch {
-            Log.fault("Couldn't fetch exchange rate. Please try again.")
+//            Log.fault("Couldn't fetch exchange rate. Please try again.")
             return .failure("Couldn't fetch exchange rate. Please try again.")
         }
     }
     
     private func performWithdraw(amount: Double) -> PadConfirmResult {
         guard availableBalance > 0 else {
-            Log.fault("Insufficient balance")
+//            Log.fault("Insufficient balance")
            
             return .failure("Insufficient balance")
         }
         guard amount > 0 else {
-            Log.debug("Enter a valid amount")
+//            Log.debug("Enter a valid amount")
             return .failure("Enter a valid amount")
         }
         guard amount <= availableBalance else {
-            Log.fault("Insufficient funds")
+//            Log.fault("Insufficient funds")
             return .failure("Insufficient funds")
         }
         

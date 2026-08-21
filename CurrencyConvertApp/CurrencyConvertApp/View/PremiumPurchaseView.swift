@@ -10,6 +10,7 @@ import SwiftyUIX
 
 struct PremiumPurchaseView: View {
     
+    var onCloseEvent: (()->())
     @StateObject var viewModel = PurchesViewModel()
     
     var body: some View {
@@ -37,16 +38,20 @@ struct PremiumPurchaseView: View {
     // MARK: - Sections
     private var topBar: some View {
         HStack {
-            Button(action: viewModel.closeTapped) {
+            Button{
+                onCloseEvent()
+            } label: {
                 Image(systemName: "xmark")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.secondary)
                     .padding(8)
                     .background(Circle().fill(Color(.systemGray5)))
             }
+            
             Spacer()
+            
             Button {
-                Task { await viewModel.restoreTapped() }
+                viewModel.restorePurchase()
             } label: {
                 Text("Restore")
                     .font(.subheadline)
@@ -92,15 +97,15 @@ struct PremiumPurchaseView: View {
 
     private var plansSection: some View {
         VStack(spacing: 12) {
-            ForEach(viewModel.plans) { plan in
-                PlanRowItem(
-                    plan: plan,
-                    isSelected: viewModel.selectedPlanID == plan.id
-                )
+            PlanRowItem(title: "Yearly \(viewModel.getYearlyPrice())", subTitle: "only \(viewModel.getYearlySplitPrice()) per week", isSelected: viewModel.selectedPurchesType == .yearly, isSelectedYearly: true)
                 .onTapGesture {
-                    viewModel.selectPlan(plan)
+                    viewModel.selectedPurchesType = .yearly
                 }
-            }
+            
+            PlanRowItem(title: "3-day free", subTitle: "then, \(viewModel.getWeeklyPrice()) per week", isSelected: viewModel.selectedPurchesType == .weekly, isSelectedYearly: false)
+                .onTapGesture {
+                    viewModel.selectedPurchesType = .weekly
+                }
         }
         .padding(.horizontal, 20)
         .padding(.top, 32)
@@ -143,7 +148,7 @@ struct PremiumPurchaseView: View {
     }
 }
 
-#Preview {
-    PremiumPurchaseView()
-}
-
+//#Preview {
+//    PremiumPurchaseView()
+//}
+//
