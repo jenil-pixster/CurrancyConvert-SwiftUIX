@@ -20,6 +20,10 @@
 		2682F2A33037261D008E5F27 /* HistoryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2A23037261D008E5F27 /* HistoryItemModel.swift */; };
 		2682F2A63037284F008E5F27 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2A53037284F008E5F27 /* IconButton.swift */; };
 		2682F2A8303728B3008E5F27 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2A7303728B3008E5F27 /* ActionButton.swift */; };
+		2682F2AA30372D03008E5F27 /* CustomPadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2A930372D03008E5F27 /* CustomPadModel.swift */; };
+		2682F2AC30372D20008E5F27 /* CustomPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2AB30372D20008E5F27 /* CustomPadViewModel.swift */; };
+		2682F2AE30372D5B008E5F27 /* CustomPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2AD30372D5B008E5F27 /* CustomPadView.swift */; };
+		2682F2B030373C5C008E5F27 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2682F2AF30373C5C008E5F27 /* AppIcon.icon */; };
 		26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */; };
 		26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */; };
 		26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB4127303701B6008AA330 /* Font+Extension .swift */; };
@@ -44,6 +48,10 @@
 		2682F2A23037261D008E5F27 /* HistoryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemModel.swift; sourceTree = "<group>"; };
 		2682F2A53037284F008E5F27 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		2682F2A7303728B3008E5F27 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		2682F2A930372D03008E5F27 /* CustomPadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadModel.swift; sourceTree = "<group>"; };
+		2682F2AB30372D20008E5F27 /* CustomPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadViewModel.swift; sourceTree = "<group>"; };
+		2682F2AD30372D5B008E5F27 /* CustomPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadView.swift; sourceTree = "<group>"; };
+		2682F2AF30373C5C008E5F27 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoadScreenView.swift; sourceTree = "<group>"; };
 		26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		26DB4127303701B6008AA330 /* Font+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension .swift"; sourceTree = "<group>"; };
@@ -89,12 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				266E182D3036E4E400A58704 /* App */,
-				266E182C3036E4D900A58704 /* Config */,
+				266E182C3036E4D900A58704 /* Resouces */,
 				2682F29330371659008E5F27 /* Servics */,
-				266E182B3036E4C300A58704 /* Utilities */,
 				266E182A3036E4BE00A58704 /* Model */,
 				266E18283036E4A300A58704 /* View */,
 				266E18293036E4B600A58704 /* ViewModel */,
+				266E182B3036E4C300A58704 /* Utilities */,
 			);
 			path = CurrencyConvertApp;
 			sourceTree = "<group>";
@@ -102,10 +110,12 @@
 		266E18283036E4A300A58704 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2682F2A430372837008E5F27 /* ReuseableView */,
 				266E18313036E66900A58704 /* SplashScreenView.swift */,
 				26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */,
 				26DB412F30370FA6008AA330 /* HomeView.swift */,
 				2682F2A030371E5C008E5F27 /* HistoryRowView.swift */,
+				2682F2AD30372D5B008E5F27 /* CustomPadView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +126,7 @@
 				26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */,
 				26DB412B3037039E008AA330 /* OnBoradingScreenViewModel.swift */,
 				2682F29E30371E2D008E5F27 /* HomeViewModel.swift */,
+				2682F2AB30372D20008E5F27 /* CustomPadViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 				2682F28C30371560008E5F27 /* CurrancyListModel.swift */,
 				2682F29A30371DEB008E5F27 /* ExchangeRateResponseModel.swift */,
 				2682F2A23037261D008E5F27 /* HistoryItemModel.swift */,
+				2682F2A930372D03008E5F27 /* CustomPadModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,19 +145,18 @@
 		266E182B3036E4C300A58704 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2682F2A430372837008E5F27 /* ReuseableView */,
 				2682F28E30371587008E5F27 /* Helper */,
 				26DB41203036FDEF008AA330 /* Exteations */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		266E182C3036E4D900A58704 /* Config */ = {
+		266E182C3036E4D900A58704 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
 				266E182E3036E4E800A58704 /* Assets */,
 			);
-			path = Config;
+			path = Resouces;
 			sourceTree = "<group>";
 		};
 		266E182D3036E4E400A58704 /* App */ = {
@@ -159,6 +170,7 @@
 		266E182E3036E4E800A58704 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2682F2AF30373C5C008E5F27 /* AppIcon.icon */,
 				266E18213036E40A00A58704 /* Assets.xcassets */,
 				266E182F3036E50300A58704 /* ColorAssets.xcassets */,
 			);
@@ -279,6 +291,7 @@
 			files = (
 				266E18303036E50300A58704 /* ColorAssets.xcassets in Resources */,
 				266E18273036E40A00A58704 /* Assets.xcassets in Resources */,
+				2682F2B030373C5C008E5F27 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,11 +358,14 @@
 				2682F2A8303728B3008E5F27 /* ActionButton.swift in Sources */,
 				26DB413030370FA6008AA330 /* HomeView.swift in Sources */,
 				26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */,
+				2682F2AA30372D03008E5F27 /* CustomPadModel.swift in Sources */,
 				2682F2A33037261D008E5F27 /* HistoryItemModel.swift in Sources */,
 				2682F29F30371E2D008E5F27 /* HomeViewModel.swift in Sources */,
+				2682F2AC30372D20008E5F27 /* CustomPadViewModel.swift in Sources */,
 				2682F28D30371560008E5F27 /* CurrancyListModel.swift in Sources */,
 				2682F29B30371DEB008E5F27 /* ExchangeRateResponseModel.swift in Sources */,
 				266E18323036E66900A58704 /* SplashScreenView.swift in Sources */,
+				2682F2AE30372D5B008E5F27 /* CustomPadView.swift in Sources */,
 				2682F2A130371E5C008E5F27 /* HistoryRowView.swift in Sources */,
 				2682F29030371590008E5F27 /* Enums.swift in Sources */,
 			);

@@ -10,39 +10,63 @@ import SwiftyUIX
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    
+
     private let headerToCardSpacing: CGFloat = 28
     private let fullCardTopPadding: CGFloat = 0
-    
-    @State private var headerHeight: CGFloat = 0
-    
+
     var body: some View {
         ZStack(alignment: .top) {
-            Color(red: 0.29, green: 0.42, blue: 0.94)
-                .ignoresSafeArea()
-            
+            Color.blue.ignoresSafeArea()
+
             headerContent
                 .opacity(viewModel.isHistoryExpanded ? 0 : 1)
                 .animation(.easeOut(duration: 0.25), value: viewModel.isHistoryExpanded)
                 .background(
                     GeometryReader { proxy in
                         Color.clear
-                            .onAppear { headerHeight = proxy.size.height }
+                            .onAppear { viewModel.headerHeight = proxy.size.height }
                             .onChange(of: proxy.size.height) { _, newValue in
-                                headerHeight = newValue
+                                viewModel.headerHeight = newValue
                             }
                     }
                 )
-            
+
             historyCard
-                .padding(.top, viewModel.isHistoryExpanded ? fullCardTopPadding : headerHeight + headerToCardSpacing)
+                .padding(.top, viewModel.isHistoryExpanded ? fullCardTopPadding : viewModel.headerHeight + headerToCardSpacing)
+
+            if viewModel.showPad {
+                padOverlay
+                    .zIndex(20)
+            }
         }
         .onAppear {
-            viewModel.loadInitialHistory()
-            Task { await viewModel.fetchConversionRates() }
+//            viewModel.loadInitialHistory()
+           
         }
     }
-    
+
+    // MARK: - Pad overlay + backdrop
+    @ViewBuilder
+    private var padOverlay: some View {
+        ZStack(alignment: .bottom) {
+            Color.black.opacity(0.4)
+                .ignoresSafeArea()
+                .transition(.opacity)
+                .onTapGesture {
+                    viewModel.closePadView()
+                }
+
+            CustomPadView {
+                viewModel.closePadView()
+            } onClick: {
+                Task {
+                    await viewModel.fetchConversionRates()
+                }
+            }
+            .transition(.move(edge: .bottom).combined(with: .opacity))
+        }
+    }
+
     // MARK: - Header
     @ViewBuilder
     private var headerContent: some View {
@@ -53,7 +77,7 @@ struct HomeView: View {
                         .resizable()
                         .frame(size: CGSize(width: 50, height: 50))
                         .foregroundColor(.white)
-                    
+
                     VStack(alignment: .leading, spacing: 2) {
                         Text("\(viewModel.greeting) 👋")
                             .appTextStyle(color: .white, size: 14)
@@ -61,15 +85,15 @@ struct HomeView: View {
                             .appTextStyle(color: .white, size: 16, weight: .bold)
                     }
                 }
-                
+
                 Spacer()
-                
+
                 HStack(spacing: 12) {
                     IconButton(systemName: "bell")
                     IconButton(systemName: "gearshape.fill")
                 }
             }
-            
+
             VStack(alignment: .leading, spacing: 6) {
                 Text("Available Balance")
                     .appTextStyle(color: .white, size: 14)
@@ -77,15 +101,19 @@ struct HomeView: View {
                     .font(.system(size: 32, weight: .heavy))
                     .foregroundColor(.white)
             }
-            
+
             HStack(spacing: 14) {
-                ActionButton(title: "WITHDRAW", isFilled: false)
-                ActionButton(title: "DEPOSIT", isFilled: true)
+                ActionButton(title: "WITHDRAW", isFilled: false) {
+                    viewModel.openPadView()
+                }
+                ActionButton(title: "DEPOSIT", isFilled: true) {
+                    viewModel.openPadView()
+                }
             }
         }
         .padding(.horizontal, 24)
     }
-    
+
     // MARK: - History Card
     @ViewBuilder
     private var historyCard: some View {
@@ -93,15 +121,14 @@ struct HomeView: View {
             Capsule()
                 .fill(Color.gray.opacity(0.3))
                 .frame(width: 40, height: 5)
-                .padding(.top, 10)
-                .padding(.bottom, 14)
-            
+                .verticalPadding(14)
+
             HStack {
                 Text("History")
                     .appTextStyle(size: 20, weight: .bold)
-                
+
                 Spacer()
-                
+
                 Button {
                     viewModel.toggleHistoryExpansion()
                 } label: {
@@ -110,14 +137,14 @@ struct HomeView: View {
                 }
             }
             .padding(.horizontal, 24)
-            
+
             ScrollView {
                 LazyVStack(spacing: 12) {
                     ForEach(viewModel.historyItems) { item in
                         HistoryRowView(item: item)
                     }
                 }
-                .padding(.horizontal, 20)
+                .horizontalPadding(20)
                 .padding(.top, 16)
                 .padding(.bottom, 30)
             }
@@ -139,7 +166,6 @@ struct HomeView: View {
         )
     }
 }
-
 
 #Preview {
     HomeView()
