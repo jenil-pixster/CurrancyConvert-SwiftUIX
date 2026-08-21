@@ -59,15 +59,29 @@ struct HomeView: View {
                 .onTapGesture {
                     viewModel.closePadView()
                 }
-
-            CustomPadView(
-                mode: viewModel.padMode,
-                onClose: { viewModel.closePadView() },
-                onConfirm: { amount, currency in
-                    await viewModel.confirmTransaction(amount: amount, currency: currency, mode: viewModel.padMode)
+            
+            VStack {
+                switch viewModel.appConfig {
+                case .Debug:
+                    Text("Debug view")
+                        .foregroundStyle(.white)
+                case .TestFlight:
+                    Text("Testflight view")
+                        .foregroundStyle(.white)
+                case .AppStore:
+                    Text("Appstore view")
+                        .foregroundStyle(.white)
                 }
-            )
-            .transition(.move(edge: .bottom).combined(with: .opacity))
+
+                CustomPadView(
+                    mode: viewModel.padMode,
+                    onClose: { viewModel.closePadView() },
+                    onConfirm: { amount, currency in
+                        await viewModel.confirmTransaction(amount: amount, currency: currency, mode: viewModel.padMode)
+                    }
+                )
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
         }
     }
 
@@ -93,8 +107,12 @@ struct HomeView: View {
                 Spacer()
 
                 HStack(spacing: 12) {
-                    IconButton(systemName: "bell")
-                    IconButton(systemName: "gearshape.fill")
+                    IconButton(systemName: "bell") {
+                        
+                    }
+                    IconButton(systemName: "gearshape.fill") {
+                        
+                    }
                 }
             }
 
@@ -124,11 +142,13 @@ struct HomeView: View {
     @ViewBuilder
     private var historyCard: some View {
         VStack(spacing: 0) {
+            
             Capsule()
                 .fill(Color.gray.opacity(0.3))
                 .frame(width: 40, height: 5)
                 .verticalPadding(14)
 
+            
             HStack {
                 Text("History")
                     .appTextStyle(size: 20, weight: .bold)
@@ -139,8 +159,9 @@ struct HomeView: View {
                     viewModel.toggleHistoryExpansion()
                 } label: {
                     Text(viewModel.isHistoryExpanded ? "Collapse" : "Expand")
-                        .appTextStyle(color: .gray, size: 14)
+                        .appTextStyle(color: .gray, size:  14)
                 }
+                
             }
             .padding(.horizontal, 24)
 
@@ -156,7 +177,10 @@ struct HomeView: View {
                     .horizontalPadding(20)
                     .padding(.top, 16)
                     .padding(.bottom, 30)
+                    .getScrollPosition(key: "historyScrollView", handler: self.viewModel.didScroll(_:))
+                    
                 }
+                .coordinateSpace(name: "historyScrollView")
             }
         }
         .background(

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import SwiftyUIX
 
 final class SplashScreenViewModel: ObservableObject {
     @Published var logoScale: CGFloat = 0.6
@@ -30,7 +31,7 @@ final class SplashScreenViewModel: ObservableObject {
     }
 
     private func schedulePulse() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + pulseDelay) { [weak self] in
+        Thread.runAfter(pulseDelay) { [weak self] in
             guard let self else { return }
             withAnimation(.easeInOut(duration: 0.4).repeatCount(1, autoreverses: true)) {
                 self.logoScale = 1.1

@@ -25,7 +25,7 @@ public struct Config {
         return false
 #endif
     }
-    static var appConfiguration: AppConfiguration {
+    static public var appConfiguration: AppConfiguration {
         if isDebug {
             return .Debug
         } else if isTestFlight {

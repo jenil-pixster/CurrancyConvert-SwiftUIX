@@ -50,6 +50,7 @@ struct CustomPadView: View {
                     .fill(.padBG)
                     .ignoresSafeArea(edges: .bottom)
             )
+           
         }
         .frame(height: 480)
         .alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
@@ -255,6 +256,7 @@ struct CustomPadView: View {
         
         VStack {
             Spacer()
+            
             CustomPadView(mode: .deposit)
         }
     }

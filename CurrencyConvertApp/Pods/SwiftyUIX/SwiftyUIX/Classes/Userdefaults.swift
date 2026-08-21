@@ -30,7 +30,7 @@ public extension UserDefaults {
     }
     
     //Common Function
-    private static func getOrSetUserDefault<T>(key: String, defaultValue: T) -> T {
+    static func getOrSetUserDefault<T>(key: String, defaultValue: T) -> T {
         if let value = standard.object(forKey: key) as? T {
             return value
         }

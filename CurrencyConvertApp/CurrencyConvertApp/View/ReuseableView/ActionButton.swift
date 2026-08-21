@@ -22,10 +22,8 @@ struct ActionButton: View {
                 .appTextStyle(color: isFilled ? .white : .fontBlack , size: 14, weight: .bold)
                 .fullWidth()
                 .verticalPadding(18)
-                .background(
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(isFilled ? Color(red: 0.08, green: 0.11, blue: 0.2) : Color.white)
-                )
+                .background(isFilled ? Color.text.primary : Color.white)
+                .cornerRadius(20)
         }
     }
 }

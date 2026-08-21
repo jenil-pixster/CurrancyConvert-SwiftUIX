@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import SwiftyUIX
 
 final class CustomPadViewModel: ObservableObject { 
     @Published var amountText: String = ""
@@ -79,6 +80,9 @@ final class CustomPadViewModel: ObservableObject {
             hasDecimalPoint = false
         }
         amountText.removeLast()
+        
+        
+        
     }
 
     // MARK: - Currency dropdown
@@ -123,5 +127,6 @@ final class CustomPadViewModel: ObservableObject {
         alertTitle = title
         alertMessage = message
         showAlert = true
+        
     }
 }

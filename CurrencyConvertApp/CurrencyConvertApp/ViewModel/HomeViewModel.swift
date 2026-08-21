@@ -12,19 +12,17 @@ import SwiftyUIX
 @MainActor
 final class HomeViewModel: ObservableObject {
     @Published var availableBalance: Double = 0
-    
     @Published var baseCurrency = "EUR"
     @Published var targetCurrency = "INR"
-    
     @Published var historyItems: [HistoryItemModel] = []
     @Published var isHistoryExpanded = false
     @Published var isLoading = false
     @Published var showPad = false
     @Published var padMode: PadMode = .deposit
     @Published var errorMessage: String?
-    
     @Published var headerHeight: CGFloat = 0
     
+    var appConfig : AppConfiguration = Config.appConfiguration
     private let service = ExchangeRateService.shared
     
     func openPadView(mode: PadMode) {
@@ -57,9 +55,14 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
+    
+    func didScroll(_ value: CGFloat) {
+        Log.info(value.description)
+    }
+    
     private func performDeposit(amount: Double, currency: String) async -> PadConfirmResult {
         guard amount > 0 else {
-            Log.debug("Enter a valid amount")
+            Log.error("Enter a valid amount")
             return .failure("Enter a valid amount")
         }
         
@@ -86,17 +89,18 @@ final class HomeViewModel: ObservableObject {
                 type: .deposit
             )
             historyItems.insert(item, at: 0)
-            
+            Log.info("Add data in history list.")
             return .success
         } catch {
-            Log.debug("Couldn't fetch exchange rate. Please try again.")
+            Log.fault("Couldn't fetch exchange rate. Please try again.")
             return .failure("Couldn't fetch exchange rate. Please try again.")
         }
     }
     
     private func performWithdraw(amount: Double) -> PadConfirmResult {
         guard availableBalance > 0 else {
-            Log.debug("Insufficient balance")
+            Log.fault("Insufficient balance")
+           
             return .failure("Insufficient balance")
         }
         guard amount > 0 else {
@@ -104,7 +108,7 @@ final class HomeViewModel: ObservableObject {
             return .failure("Enter a valid amount")
         }
         guard amount <= availableBalance else {
-            Log.debug("Insufficient funds")
+            Log.fault("Insufficient funds")
             return .failure("Insufficient funds")
         }
         

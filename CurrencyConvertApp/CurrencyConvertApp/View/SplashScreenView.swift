@@ -11,7 +11,7 @@ import SwiftyUIX
 struct SplashScreenView: View {
     
     @StateObject private var viewModel = SplashScreenViewModel()
-    @AppStorage("isPushOnHomeScreen") var isPushOnHomeScreen: Bool = false
+    var isPushOnHomeScreen = UserDefaults.isPushOnHomeScreen
     
     var body: some View {
         NavigationStack {
@@ -27,7 +27,7 @@ struct SplashScreenView: View {
             } else {
                 splashView
                     .onAppear {
-                        viewModel.startAnimation()
+                       viewModel.startAnimation()
                     }
             }
         }

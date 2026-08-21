@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import SwiftyUIX
 
 final class OnBoardScreenViewModel: ObservableObject {
     @Published var showTitle = false
@@ -14,8 +15,7 @@ final class OnBoardScreenViewModel: ObservableObject {
     @Published var showDescription = false
     @Published var showButton = false
     @Published var isPulsing = false
-    
-    @AppStorage("isPushOnHomeScreen") var isPushOnHomeScreen: Bool = false
+    @Published var navigateToHome = false
     
     private let titleDelay: Double = 0
     private let illustrationDelay: Double = 0.25
@@ -37,8 +37,14 @@ final class OnBoardScreenViewModel: ObservableObject {
             showButton = true
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + entranceTotalDuration) { [weak self] in
+        Thread.runAfter(entranceTotalDuration) { [weak self] in
             self?.startContinuousIllustrationLoop()
+        }
+    }
+    
+    func checkOnboardingStatus() {
+        if UserDefaults.isPushOnHomeScreen {
+            navigateToHome = true
         }
     }
     
@@ -49,6 +55,7 @@ final class OnBoardScreenViewModel: ObservableObject {
     }
     
     func getStartedTapped() {
-        isPushOnHomeScreen = true
+        UserDefaults.isPushOnHomeScreen = true
+        checkOnboardingStatus()
     }
 }

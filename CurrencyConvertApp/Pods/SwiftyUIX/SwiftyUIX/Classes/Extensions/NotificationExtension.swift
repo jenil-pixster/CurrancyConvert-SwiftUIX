@@ -8,11 +8,11 @@
 import Foundation
 extension NSNotification.Name {
 
-    func fire() {
+    public func fire() {
         NotificationCenter.default.post(name: self, object: nil)
     }
     
-    func fire(value : [String : Any]) {
+    public func fire(value : [String : Any]) {
         NotificationCenter.default.post(name: self, object: nil,userInfo: value)
     }
     
