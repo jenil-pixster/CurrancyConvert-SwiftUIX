@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-final class CustomPadViewModel: ObservableObject {
+final class CustomPadViewModel: ObservableObject { 
     @Published var amountText: String = ""
     @Published var selectedCurrency: String
     @Published var isCurrencyListVisible: Bool = false
