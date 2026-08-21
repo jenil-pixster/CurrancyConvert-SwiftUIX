@@ -11,7 +11,8 @@ struct HistoryItemModel: Identifiable {
     let id = UUID()
     let transactionId: String
     let date: String
-    let amountUSD: Double
-    let isConversion: Bool
-    var convertedAmount: Double? = nil
+    let amount: Double
+    let currencyCode: String  
+    let convertedAmountINR: Double
+    let type: TransactionType
 }

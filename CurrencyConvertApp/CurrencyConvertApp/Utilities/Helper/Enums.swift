@@ -30,3 +30,18 @@ enum NetworkError: LocalizedError {
         }
     }
 }
+
+enum PadMode {
+    case deposit
+    case withdraw
+}
+
+enum PadConfirmResult {
+    case success
+    case failure(String)
+}
+
+enum TransactionType {
+    case deposit
+    case withdraw
+}

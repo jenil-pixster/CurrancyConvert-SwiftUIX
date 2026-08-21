@@ -10,6 +10,7 @@ import SwiftyUIX
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
+    @GestureState private var dragOffset: CGFloat = 0
 
     private let headerToCardSpacing: CGFloat = 28
     private let fullCardTopPadding: CGFloat = 0
@@ -32,16 +33,19 @@ struct HomeView: View {
                 )
 
             historyCard
-                .padding(.top, viewModel.isHistoryExpanded ? fullCardTopPadding : viewModel.headerHeight + headerToCardSpacing)
+                .padding(
+                    .top,
+                    viewModel.cardTopPadding(
+                        dragOffset: dragOffset,
+                        fullPadding: fullCardTopPadding,
+                        halfPadding: viewModel.headerHeight + headerToCardSpacing
+                    )
+                )
 
             if viewModel.showPad {
                 padOverlay
                     .zIndex(20)
             }
-        }
-        .onAppear {
-//            viewModel.loadInitialHistory()
-           
         }
     }
 
@@ -56,13 +60,13 @@ struct HomeView: View {
                     viewModel.closePadView()
                 }
 
-            CustomPadView {
-                viewModel.closePadView()
-            } onClick: {
-                Task {
-                    await viewModel.fetchConversionRates()
+            CustomPadView(
+                mode: viewModel.padMode,
+                onClose: { viewModel.closePadView() },
+                onConfirm: { amount, currency in
+                    await viewModel.confirmTransaction(amount: amount, currency: currency, mode: viewModel.padMode)
                 }
-            }
+            )
             .transition(.move(edge: .bottom).combined(with: .opacity))
         }
     }
@@ -79,9 +83,9 @@ struct HomeView: View {
                         .foregroundColor(.white)
 
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("\(viewModel.greeting) 👋")
+                        Text("Good Morning 👋")
                             .appTextStyle(color: .white, size: 14)
-                        Text(viewModel.userName)
+                        Text("Alex Walker")
                             .appTextStyle(color: .white, size: 16, weight: .bold)
                     }
                 }
@@ -104,14 +108,16 @@ struct HomeView: View {
 
             HStack(spacing: 14) {
                 ActionButton(title: "WITHDRAW", isFilled: false) {
-                    viewModel.openPadView()
+                    viewModel.openPadView(mode: .withdraw)
                 }
+                .disabled(viewModel.availableBalance <= 0)
+
                 ActionButton(title: "DEPOSIT", isFilled: true) {
-                    viewModel.openPadView()
+                    viewModel.openPadView(mode: .deposit)
                 }
             }
         }
-        .padding(.horizontal, 24)
+        .horizontalPadding(24)
     }
 
     // MARK: - History Card
@@ -138,15 +144,19 @@ struct HomeView: View {
             }
             .padding(.horizontal, 24)
 
-            ScrollView {
-                LazyVStack(spacing: 12) {
-                    ForEach(viewModel.historyItems) { item in
-                        HistoryRowView(item: item)
+            if viewModel.historyItems.isEmpty {
+                noDataView
+            } else {
+                ScrollView {
+                    LazyVStack(spacing: 12) {
+                        ForEach(viewModel.historyItems) { item in
+                            HistoryRowView(item: item)
+                        }
                     }
+                    .horizontalPadding(20)
+                    .padding(.top, 16)
+                    .padding(.bottom, 30)
                 }
-                .horizontalPadding(20)
-                .padding(.top, 16)
-                .padding(.bottom, 30)
             }
         }
         .background(
@@ -156,14 +166,33 @@ struct HomeView: View {
         .ignoresSafeArea(edges: .bottom)
         .gesture(
             DragGesture()
+                .updating($dragOffset) { value, state, _ in
+                    state = value.translation.height   
+                }
                 .onEnded { value in
-                    if value.translation.height < -40 && !viewModel.isHistoryExpanded {
-                        viewModel.toggleHistoryExpansion()
-                    } else if value.translation.height > 40 && viewModel.isHistoryExpanded {
-                        viewModel.toggleHistoryExpansion()
-                    }
+                    viewModel.handleCardDragEnded(
+                        translationHeight: value.translation.height,
+                        predictedTranslationHeight: value.predictedEndTranslation.height
+                    )
                 }
         )
+    }
+
+    // MARK: - No Data State
+    private var noDataView: some View {
+        VStack(spacing: 14) {
+            Spacer()
+
+            systemImage("doc.text")
+                .frame(size: CGSize(width: 56, height: 74))
+                .foregroundStyle(.blue)
+
+            Text("NO DATA")
+                .appTextStyle(size: 15, weight: .bold)
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 

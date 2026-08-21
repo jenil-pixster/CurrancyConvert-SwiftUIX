@@ -9,31 +9,33 @@ import SwiftUI
 import SwiftyUIX
 
 struct CustomPadView: View {
-    @StateObject private var viewModel = CustomPadViewModel()
+    @StateObject private var viewModel: CustomPadViewModel
+    let mode: PadMode
     var onClose: (() -> Void)? = nil
-    var onClick: (() -> Void)? = nil
-    
+
     private let keyHeight: CGFloat = 72
     private let keySpacing: CGFloat = 12
-    
+
+    init(mode: PadMode, onClose: (() -> Void)? = nil, onConfirm: ((Double, String) async -> PadConfirmResult)? = nil) {
+        self.mode = mode
+        self.onClose = onClose
+        _viewModel = StateObject(wrappedValue: CustomPadViewModel(
+            mode: mode,
+            fixedCurrency: mode == .withdraw ? "INR" : nil,
+            onConfirm: onConfirm,
+            onSuccessClose: onClose
+        ))
+    }
+
     var body: some View {
         GeometryReader { geo in
-            VStack(spacing: 22) {
-                grabHandle
-                    .gesture(
-                        DragGesture()
-                            .onEnded { value in
-                                if value.translation.height > 40 {
-                                    onClose?()
-                                }
-                            }
-                    )
-                
+            VStack(spacing: 16) {
                 amountRow
-                
+                    .padding(.top)
+
                 ZStack(alignment: .topLeading) {
                     keypadGrid
-                    
+
                     if viewModel.isCurrencyListVisible {
                         currencyDropdown
                     }
@@ -45,18 +47,16 @@ struct CustomPadView: View {
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 28, style: .continuous)
-                    .fill(Color(red: 0.07, green: 0.09, blue: 0.16))
+                    .fill(.padBG)
                     .ignoresSafeArea(edges: .bottom)
             )
         }
         .frame(height: 480)
-    }
-    
-    // MARK: - Grab handle
-    private var grabHandle: some View {
-        Capsule()
-            .fill(Color.white.opacity(0.15))
-            .frame(width: 40, height: 5)
+        .alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
+            Button("OK") {}
+        } message: {
+            Text(viewModel.alertMessage)
+        }
     }
     
     // MARK: - Currency selector + amount field
@@ -68,8 +68,10 @@ struct CustomPadView: View {
                 HStack(spacing: 6) {
                     Text(currencySymbol(for: viewModel.selectedCurrency))
                         .font(.system(size: 18, weight: .bold))
-                    Image(systemName: "chevron.down")
-                        .font(.system(size: 12, weight: .bold))
+                    if !viewModel.isCurrencyFixed {
+                        Image(systemName: "chevron.down")
+                            .font(.system(size: 12, weight: .bold))
+                    }
                 }
                 .foregroundColor(.white)
                 .frame(width: 90, height: keyHeight)
@@ -78,8 +80,9 @@ struct CustomPadView: View {
                         .fill(Color(red: 0.29, green: 0.42, blue: 0.94))
                 )
             }
-            
-            Text(viewModel.amountText.isEmpty ? "0" : viewModel.amountText)
+            .disabled(viewModel.isCurrencyFixed)
+
+            Text(viewModel.displayText)
                 .font(.system(size: 22, weight: .semibold))
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -92,7 +95,7 @@ struct CustomPadView: View {
                 .allowsHitTesting(false)
         }
     }
-    
+
     // MARK: - Currency dropdown list
     private var currencyDropdown: some View {
         VStack(spacing: 0) {
@@ -106,7 +109,7 @@ struct CustomPadView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .frame(height: 46)
                 }
-                
+
                 if option.id != viewModel.currencyOptions.last?.id {
                     Divider().padding(.horizontal, 12)
                 }
@@ -121,33 +124,25 @@ struct CustomPadView: View {
         .transition(.opacity.combined(with: .move(edge: .top)))
         .zIndex(10)
     }
-    
+
     // MARK: - Keypad grid
     private var keypadGrid: some View {
         HStack(spacing: keySpacing) {
             VStack(spacing: keySpacing) {
                 HStack(spacing: keySpacing) {
-                    numberKey("7")
-                    numberKey("8")
-                    numberKey("9")
+                    numberKey("7"); numberKey("8"); numberKey("9")
                 }
                 HStack(spacing: keySpacing) {
-                    numberKey("4")
-                    numberKey("5")
-                    numberKey("6")
+                    numberKey("4"); numberKey("5"); numberKey("6")
                 }
                 HStack(spacing: keySpacing) {
-                    numberKey("1")
-                    numberKey("2")
-                    numberKey("3")
+                    numberKey("1"); numberKey("2"); numberKey("3")
                 }
                 HStack(spacing: keySpacing) {
-                    numberKey("0")
-                    numberKey("00")
-                    decimalKey
+                    numberKey("0"); numberKey("00"); decimalKey
                 }
             }
-            
+
             VStack(spacing: keySpacing) {
                 acKey
                 deleteKey
@@ -156,8 +151,7 @@ struct CustomPadView: View {
             .frame(width: keyHeight)
         }
     }
-    
-    // MARK: - Individual keys
+
     private func numberKey(_ digit: String) -> some View {
         Button {
             viewModel.digitTapped(digit)
@@ -169,11 +163,11 @@ struct CustomPadView: View {
                 .frame(height: keyHeight)
                 .background(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(Color(red: 0.19, green: 0.22, blue: 0.3))
+                        .fill(.lightBlue)
                 )
         }
     }
-    
+
     private var decimalKey: some View {
         Button {
             viewModel.decimalTapped()
@@ -185,11 +179,11 @@ struct CustomPadView: View {
                 .frame(height: keyHeight)
                 .background(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(Color(red: 0.19, green: 0.22, blue: 0.3))
+                        .fill(.lightBlue)
                 )
         }
     }
-    
+
     private var acKey: some View {
         Button {
             viewModel.clearAllTapped()
@@ -201,11 +195,11 @@ struct CustomPadView: View {
                 .frame(height: keyHeight * 2 + keySpacing)
                 .background(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(Color(red: 0.19, green: 0.22, blue: 0.3))
+                        .fill(.lightBlue)
                 )
         }
     }
-    
+
     private var deleteKey: some View {
         Button {
             viewModel.deleteLastTapped()
@@ -217,28 +211,32 @@ struct CustomPadView: View {
                 .frame(height: keyHeight)
                 .background(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(Color(red: 0.94, green: 0.4, blue: 0.35))
+                        .fill(.redOrange)
                 )
         }
     }
-    
+
     private var confirmKey: some View {
         Button {
-            onClick?()
-            onClose?()
+            Task {
+                await viewModel.confirmTapped()
+            }
         } label: {
-            Image(systemName: "checkmark")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundColor(.white)
-                .frame(width: keyHeight, height: keyHeight)
-                .background(
-                    Circle()
-                        .fill(Color(red: 0.35, green: 0.78, blue: 0.47))
-                )
+            ZStack {
+                Circle().fill(Color(red: 0.35, green: 0.78, blue: 0.47))
+                if viewModel.isProcessing {
+                    ProgressView().tint(.white)
+                } else {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
+                }
+            }
+            .frame(width: keyHeight, height: keyHeight)
         }
+        .disabled(viewModel.isProcessing)
     }
-    
-    // MARK: - Helper
+
     private func currencySymbol(for code: String) -> String {
         switch code {
         case "USD": return "$"
@@ -252,10 +250,12 @@ struct CustomPadView: View {
 
 #Preview {
     ZStack {
-        Color(red: 0.29, green: 0.42, blue: 0.94).ignoresSafeArea()
+        Color.padBG
+            .ignoresSafeArea()
+        
         VStack {
             Spacer()
-            CustomPadView()
+            CustomPadView(mode: .deposit)
         }
     }
     .ignoresSafeArea(edges: .bottom)

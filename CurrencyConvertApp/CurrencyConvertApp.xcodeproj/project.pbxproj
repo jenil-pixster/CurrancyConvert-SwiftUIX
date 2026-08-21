@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				266E182D3036E4E400A58704 /* App */,
-				266E182C3036E4D900A58704 /* Resouces */,
+				266E182C3036E4D900A58704 /* Resources */,
 				2682F29330371659008E5F27 /* Servics */,
 				266E182A3036E4BE00A58704 /* Model */,
 				266E18283036E4A300A58704 /* View */,
@@ -151,12 +151,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		266E182C3036E4D900A58704 /* Resouces */ = {
+		266E182C3036E4D900A58704 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				266E182E3036E4E800A58704 /* Assets */,
 			);
-			path = Resouces;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		266E182D3036E4E400A58704 /* App */ = {
