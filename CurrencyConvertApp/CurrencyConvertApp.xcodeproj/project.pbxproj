@@ -27,6 +27,11 @@
 		2682F2AC30372D20008E5F27 /* CustomPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2AB30372D20008E5F27 /* CustomPadViewModel.swift */; };
 		2682F2AE30372D5B008E5F27 /* CustomPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682F2AD30372D5B008E5F27 /* CustomPadView.swift */; };
 		2682F2B030373C5C008E5F27 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2682F2AF30373C5C008E5F27 /* AppIcon.icon */; };
+		26B60A3D303854F90088CB45 /* PremiumPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A3C303854F80088CB45 /* PremiumPurchaseView.swift */; };
+		26B60A3F3038567A0088CB45 /* PurchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A3E3038567A0088CB45 /* PurchesViewModel.swift */; };
+		26B60A4130385C0B0088CB45 /* SubscriptionPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4030385C0B0088CB45 /* SubscriptionPlanModel.swift */; };
+		26B60A4330385ECE0088CB45 /* PlanRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4230385ECE0088CB45 /* PlanRowItem.swift */; };
+		26B60A4730386C2B0088CB45 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B60A4630386C2B0088CB45 /* Constant.swift */; };
 		26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */; };
 		26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */; };
 		26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DB4127303701B6008AA330 /* Font+Extension .swift */; };
@@ -58,6 +63,11 @@
 		2682F2AB30372D20008E5F27 /* CustomPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadViewModel.swift; sourceTree = "<group>"; };
 		2682F2AD30372D5B008E5F27 /* CustomPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadView.swift; sourceTree = "<group>"; };
 		2682F2AF30373C5C008E5F27 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		26B60A3C303854F80088CB45 /* PremiumPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPurchaseView.swift; sourceTree = "<group>"; };
+		26B60A3E3038567A0088CB45 /* PurchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchesViewModel.swift; sourceTree = "<group>"; };
+		26B60A4030385C0B0088CB45 /* SubscriptionPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlanModel.swift; sourceTree = "<group>"; };
+		26B60A4230385ECE0088CB45 /* PlanRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRowItem.swift; sourceTree = "<group>"; };
+		26B60A4630386C2B0088CB45 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		26DB411B3036F82B008AA330 /* OnBoadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoadScreenView.swift; sourceTree = "<group>"; };
 		26DB411E3036F949008AA330 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		26DB4127303701B6008AA330 /* Font+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension .swift"; sourceTree = "<group>"; };
@@ -122,6 +132,8 @@
 				26DB412F30370FA6008AA330 /* HomeView.swift */,
 				2682F2A030371E5C008E5F27 /* HistoryRowView.swift */,
 				2682F2AD30372D5B008E5F27 /* CustomPadView.swift */,
+				26B60A3C303854F80088CB45 /* PremiumPurchaseView.swift */,
+				26B60A4230385ECE0088CB45 /* PlanRowItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +145,7 @@
 				26DB412B3037039E008AA330 /* OnBoradingScreenViewModel.swift */,
 				2682F29E30371E2D008E5F27 /* HomeViewModel.swift */,
 				2682F2AB30372D20008E5F27 /* CustomPadViewModel.swift */,
+				26B60A3E3038567A0088CB45 /* PurchesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -144,6 +157,7 @@
 				2682F29A30371DEB008E5F27 /* ExchangeRateResponseModel.swift */,
 				2682F2A23037261D008E5F27 /* HistoryItemModel.swift */,
 				2682F2A930372D03008E5F27 /* CustomPadModel.swift */,
+				26B60A4030385C0B0088CB45 /* SubscriptionPlanModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +203,7 @@
 				2646C64D303827CD00DB9D07 /* NotificationObservers.swift */,
 				2682F28F30371590008E5F27 /* Enums.swift */,
 				2646C64B3038225600DB9D07 /* Userdefaults.swift */,
+				26B60A4630386C2B0088CB45 /* Constant.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -357,16 +372,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B60A4330385ECE0088CB45 /* PlanRowItem.swift in Sources */,
 				2682F2A63037284F008E5F27 /* IconButton.swift in Sources */,
+				26B60A3D303854F90088CB45 /* PremiumPurchaseView.swift in Sources */,
 				2682F29D30371E0C008E5F27 /* ExchangeRateService.swift in Sources */,
 				26DB412A30370216008AA330 /* Text+Extension.swift in Sources */,
 				26DB412C3037039E008AA330 /* OnBoradingScreenViewModel.swift in Sources */,
 				266E18263036E40A00A58704 /* CurrencyConvertAppApp.swift in Sources */,
 				26DB411F3036F949008AA330 /* SplashScreenViewModel.swift in Sources */,
 				26DB4128303701B6008AA330 /* Font+Extension .swift in Sources */,
+				26B60A4730386C2B0088CB45 /* Constant.swift in Sources */,
 				2682F2A8303728B3008E5F27 /* ActionButton.swift in Sources */,
 				2646C64E303827D600DB9D07 /* NotificationObservers.swift in Sources */,
 				2646C64C3038225C00DB9D07 /* Userdefaults.swift in Sources */,
+				26B60A4130385C0B0088CB45 /* SubscriptionPlanModel.swift in Sources */,
 				2646C64A3038219500DB9D07 /* Color + Extension.swift in Sources */,
 				26DB413030370FA6008AA330 /* HomeView.swift in Sources */,
 				26DB411C3036F82B008AA330 /* OnBoadScreenView.swift in Sources */,
@@ -379,6 +398,7 @@
 				266E18323036E66900A58704 /* SplashScreenView.swift in Sources */,
 				2682F2AE30372D5B008E5F27 /* CustomPadView.swift in Sources */,
 				2682F2A130371E5C008E5F27 /* HistoryRowView.swift in Sources */,
+				26B60A3F3038567A0088CB45 /* PurchesViewModel.swift in Sources */,
 				2682F29030371590008E5F27 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
