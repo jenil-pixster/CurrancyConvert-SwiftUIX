@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-// MARK: - Testimonial Model
-
-struct Testimonial: Identifiable {
-    let id: Int
-    let quote: String
-    let description: String
-    let author: String
-}
-
 // MARK: - TestimonialCardView
 
 struct TestimonialCardView: View {
