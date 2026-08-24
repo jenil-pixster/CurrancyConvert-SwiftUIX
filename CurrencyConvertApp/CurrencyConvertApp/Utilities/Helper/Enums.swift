@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum TranstionType {
-    case Withdraw
-    case deposit
-}
-
 enum NetworkError: LocalizedError {
     case invalidURL
     case invalidResponse
@@ -44,4 +39,9 @@ enum PadConfirmResult {
 enum TransactionType {
     case deposit
     case withdraw
+}
+
+enum purchesType {
+    case yearly
+    case weekly
 }

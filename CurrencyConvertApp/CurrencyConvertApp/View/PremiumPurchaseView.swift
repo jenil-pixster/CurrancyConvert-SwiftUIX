@@ -10,16 +10,27 @@ import SwiftyUIX
 
 struct PremiumPurchaseView: View {
     
+    var userSelectedType: UserType = .reviewer
     var onCloseEvent: (()->())
     @StateObject var viewModel = PurchesViewModel()
     
     var body: some View {
         VStack(spacing: 0) {
-            topBar
-            midContentView
+            ZStack(alignment: .top) {
+               bgPrinterView
+                
+                VStack(spacing: 0) {
+                    topBar
+                    midContentView
+                }
+            }
             plansSection
             continueButton
             footer
+        }
+        .onAppear {
+            Log.debug("userSelectedType: \(userSelectedType)")
+            viewModel.userType = userSelectedType
         }
         .background(Color(.systemBackground))
         .disabled(viewModel.isPurchasing)
@@ -36,20 +47,63 @@ struct PremiumPurchaseView: View {
     }
 
     // MARK: - Sections
+    @ViewBuilder
+    private var bgPrinterView: some View {
+        GeometryReader { geo in
+            let w = geo.size.width
+            
+            // Top-left printer (small)
+            Image(.imgBgPrinter)
+                .resizable()
+                .scaledToFit()
+                .frame(width: w * 0.08)
+                .position(x: w * 0.12, y: geo.size.height * 0.15)
+            
+            // Bottom-left printer (larger)
+            Image(.imgBgPrinter)
+                .resizable()
+                .scaledToFit()
+                .frame(width: w * 0.1)
+                .position(x: w * 0.11, y: geo.size.height * 0.38)
+            
+            // Top-right printer (small)
+            Image(.imgBgPrinter)
+                .resizable()
+                .scaledToFit()
+                .frame(width: w * 0.08)
+                .position(x: w * 0.88, y: geo.size.height * 0.18)
+            
+            // Bottom-right printer (larger)
+            Image(.imgBgPrinter)
+                .resizable()
+                .scaledToFit()
+                .frame(width: w * 0.1)
+                .position(x: w * 0.89, y: geo.size.height * 0.50)
+        }
+    }
+    
+    @ViewBuilder
     private var topBar: some View {
         HStack {
-            Button{
-                onCloseEvent()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.secondary)
-                    .padding(8)
-                    .background(Circle().fill(Color(.systemGray5)))
+            if viewModel.isUIUpdate || userSelectedType == .reviewer {
+                Button {
+                    onCloseEvent()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.secondary)
+                        .padding(8)
+                        .background(Circle().fill(Color(.systemGray5)))
+                }
+                .transition(.opacity)
+            } else {
+                // Placeholder to keep layout stable
+                Color.clear
+                    .frame(width: 32, height: 32)
             }
-            
+
             Spacer()
-            
+
             Button {
                 viewModel.restorePurchase()
             } label: {
@@ -57,6 +111,7 @@ struct PremiumPurchaseView: View {
                     .font(.subheadline)
                     .foregroundColor(.primary)
             }
+            .transition(.opacity)
         }
         .padding(.horizontal, 20)
         .padding(.top, 8)
@@ -82,30 +137,49 @@ struct PremiumPurchaseView: View {
     }
 
     private var testimonialCard: some View {
-        Image(.imgPremium)
+        TestimonialCardView(
+            currentIndex: $viewModel.testimonialPageIndex,
+            testimonials: viewModel.testimonials
+        )
     }
 
+    @ViewBuilder
     private var pageDots: some View {
         HStack(spacing: 6) {
-            ForEach(0..<viewModel.testimonialPageCount, id: \.self) { index in
+            ForEach(0..<viewModel.testimonials.count, id: \.self) { index in
                 Circle()
                     .fill(index == viewModel.testimonialPageIndex ? Color.blue : Color(.systemGray4))
-                    .frame(width: 6, height: 6)
+                    .squareFrame(size: 6)
+                    .animation(.easeInOut(duration: 0.3), value: viewModel.testimonialPageIndex)
             }
         }
     }
 
+    @ViewBuilder
     private var plansSection: some View {
         VStack(spacing: 12) {
-            PlanRowItem(title: "Yearly \(viewModel.getYearlyPrice())", subTitle: "only \(viewModel.getYearlySplitPrice()) per week", isSelected: viewModel.selectedPurchesType == .yearly, isSelectedYearly: true)
-                .onTapGesture {
-                    viewModel.selectedPurchesType = .yearly
-                }
-            
-            PlanRowItem(title: "3-day free", subTitle: "then, \(viewModel.getWeeklyPrice()) per week", isSelected: viewModel.selectedPurchesType == .weekly, isSelectedYearly: false)
-                .onTapGesture {
-                    viewModel.selectedPurchesType = .weekly
-                }
+            // Split-price subtitle hidden until isUIReady = true (after 3s)
+            PlanRowItem(
+                title: "Yearly \(viewModel.getYearlyPrice())",
+                subTitle: "only \(viewModel.yearlyPurchaseID?.getsplitPrice(withOutPostFix: true) ?? "nil") per week",
+                isSelected: viewModel.selectedPurchesType == .yearly,
+                isSelectedYearly: true,
+                showSubTitle: userSelectedType != .reviewer
+            )
+            .onTapGesture {
+                viewModel.selectedPurchesType = .yearly
+            }
+
+            PlanRowItem(
+                title: userSelectedType == .reviewer ? "weekly \(viewModel.getWeeklyPrice())" : "3-day free",
+                subTitle: "then, \(viewModel.getWeeklyPrice()) per week",
+                isSelected: viewModel.selectedPurchesType == .weekly,
+                isSelectedYearly: false,
+                showSubTitle: userSelectedType != .reviewer
+            )
+            .onTapGesture {
+                viewModel.selectedPurchesType = .weekly
+            }
         }
         .padding(.horizontal, 20)
         .padding(.top, 32)
@@ -113,7 +187,7 @@ struct PremiumPurchaseView: View {
 
     private var continueButton: some View {
         Button {
-            Task { await viewModel.continueTapped() }
+            viewModel.continueTapped()
         } label: {
             Text("Continue")
                 .font(.system(size: 18, weight: .bold))
@@ -124,11 +198,11 @@ struct PremiumPurchaseView: View {
                     RoundedRectangle(cornerRadius: 27)
                         .fill(Color(red: 0.29, green: 0.5, blue: 0.75))
                 )
-        }
-        .padding(.horizontal, 20)
+        }.horizontalPadding(20)
         .padding(.top, 20)
     }
 
+    @ViewBuilder
     private var footer: some View {
         VStack(spacing: 10) {
             Text("Auto-renewable subscription. Cancel anytime.")
@@ -136,19 +210,17 @@ struct PremiumPurchaseView: View {
                 .foregroundColor(.primary)
 
             HStack(spacing: 8) {
-                Button("Privacy policy") { /* open URL */ }
+                Button("Privacy policy") {}
                 Text("|").foregroundColor(.secondary)
-                Button("Terms of use") { /* open URL */ }
+                Button("Terms of use") {}
             }
             .font(.footnote)
             .foregroundColor(.secondary)
         }
-        .padding(.top, 12)
-        .padding(.bottom, 16)
+        .verticalPadding(15)
     }
 }
 
-//#Preview {
-//    PremiumPurchaseView()
-//}
-//
+#Preview {
+    PremiumPurchaseView(userSelectedType: .reviewer, onCloseEvent: {})
+}

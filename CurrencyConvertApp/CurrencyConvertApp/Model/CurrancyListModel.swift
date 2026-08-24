@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - Models
 struct CurrancyListModel: Identifiable {
     let id = UUID()
-    let type: TranstionType
+    let type: TransactionType
     let title: String
     let date: String
     let currancyType: String

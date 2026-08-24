@@ -10,11 +10,11 @@ import SwiftyUIX
 
 // MARK: - Reusable Icon button
 struct IconButton: View {
-    let systemName: String
+    let name: String
     var action: (()->Void)
     
     var body: some View {
-        systemImage(systemName)
+        Text(name)
             .foregroundColor(.white)
             .padding(10)
             .squareFrame(size: 40)

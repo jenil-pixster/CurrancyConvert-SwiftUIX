@@ -26,8 +26,8 @@ extension AppDelegate {
     
         //mention all you purchase id with their default prices
         PurchaseModel.shared.purchaseIds =  [
-            .init(type: .yearly, purchaseId: Constants.yearly, priceDefaultValue: "$59.99", priceDefaultValueDouble: 59.99, needSplitPrice: true),
-            .init(type: .weekly, purchaseId: Constants.weekly, priceDefaultValue: "$9.99", priceDefaultValueDouble: 9.99, needSplitPrice: true),
+            .init(type: .yearly, purchaseId: Constants.yearly, priceDefaultValue: "$59.99", priceDefaultValueDouble: 59.99, needSplitPrice: true, splitPriceInToUnit: .week),
+            .init(type: .weekly, purchaseId: Constants.weekly, priceDefaultValue: "$9.99", priceDefaultValueDouble: 9.99, needSplitPrice: true, splitPriceInToUnit: .week),
         ]
         
         //run this folder to get all purchase ids details and price

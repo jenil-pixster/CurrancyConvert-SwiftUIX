@@ -135,7 +135,9 @@ struct PurchaseId : Identifiable,Equatable {
         }()
         
         // Return early if suffix isn't requested
-        guard !withOutPostFix else { return base }
+        guard !withOutPostFix else {
+            return base
+        }
         
         // Append suffix if available
         if let splitPriceStringSuffix, !splitPriceStringSuffix.isEmpty {

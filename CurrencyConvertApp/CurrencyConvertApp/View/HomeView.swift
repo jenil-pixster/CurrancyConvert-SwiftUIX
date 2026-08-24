@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftyUIX
 
 struct HomeView: View {
+    @State private var userType: UserType = .reviewer
     @StateObject private var viewModel = HomeViewModel()
     @GestureState private var dragOffset: CGFloat = 0
 
@@ -48,14 +49,10 @@ struct HomeView: View {
             }
         }
         .fullScreenCover(isPresented: $viewModel.isOpenPayWallView, content: {
-            PremiumPurchaseView(onCloseEvent: {
+            PremiumPurchaseView(userSelectedType: userType) {
                 viewModel.isOpenPayWallView = false
-            })
-                .navigationBarBackButtonHidden()
+            }
         })
-        .onAppear() {
-            viewModel.delayOpenPayWallScreen()
-        }
     }
 
     // MARK: - Pad overlay + backdrop
@@ -116,11 +113,13 @@ struct HomeView: View {
                 Spacer()
 
                 HStack(spacing: 12) {
-                    IconButton(systemName: "bell") {
-                        
+                    IconButton(name: "R") {
+                        userType = .reviewer
+                        viewModel.isOpenPayWallView = true
                     }
-                    IconButton(systemName: "gearshape.fill") {
-                        
+                    IconButton(name: "N") {
+                        userType = .nonReviewer
+                        viewModel.isOpenPayWallView = true
                     }
                 }
             }
