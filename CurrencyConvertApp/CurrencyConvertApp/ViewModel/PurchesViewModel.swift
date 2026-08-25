@@ -10,14 +10,7 @@ import Combine
 import SwiftyUIX
 import SwiftyStoreKit
 
-enum UserType {
-    case reviewer
-    case nonReviewer
-}
-
 final class PurchesViewModel: ObservableObject {
-
-    var userType: UserType = .nonReviewer
 
     // MARK: - Published
     @Published var isLoading: Bool = false
@@ -27,22 +20,23 @@ final class PurchesViewModel: ObservableObject {
     @Published var testimonialPageIndex: Int = 0
     @Published var isUIUpdate: Bool = false
     @Published var isUIReady: Bool = false
+    @Published var isReviewVersion = UserDefaults.isReviewVersion
 
     // MARK: - Computed behaviour flags
 
     /// Show the split-price subtitle inside plan rows.
     var showSplitPrice: Bool {
-        userType == .nonReviewer
+        !UserDefaults.isReviewVersion
     }
 
     /// Show the Restore button in the top-bar.
     var showRestoreButton: Bool {
-        userType == .reviewer ? true : isUIReady
+        UserDefaults.isReviewVersion ? true : isUIReady
     }
 
     /// Hide the word "free" (and "Free Trial" badge) in plan rows.
     var hideFreeKeyword: Bool {
-        userType == .reviewer
+        UserDefaults.isReviewVersion
     }
 
     let testimonials: [Testimonial] = [
@@ -73,8 +67,7 @@ final class PurchesViewModel: ObservableObject {
 
     // MARK: - Init
 
-    init(userType: UserType = .nonReviewer) {
-        self.userType = userType
+    init() {
         PurchaseModel.shared.delegate = self
         configureUIVisibility()
         
@@ -83,12 +76,10 @@ final class PurchesViewModel: ObservableObject {
 
     /// Applies the correct timing / visibility based on the chosen user type.
     private func configureUIVisibility() {
-        switch userType {
-        case .reviewer:
+        if UserDefaults.isReviewVersion {
             isUIUpdate = true
             isUIReady  = true
-
-        case .nonReviewer:
+        } else {
             isUIUpdate = false
             isUIReady  = false
             Thread.runAfter(3) {

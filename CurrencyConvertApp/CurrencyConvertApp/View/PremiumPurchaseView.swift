@@ -10,7 +10,6 @@ import SwiftyUIX
 
 struct PremiumPurchaseView: View {
     
-    var userSelectedType: UserType = .reviewer
     var onCloseEvent: (()->())
     @StateObject var viewModel = PurchesViewModel()
     
@@ -29,8 +28,7 @@ struct PremiumPurchaseView: View {
             footer
         }
         .onAppear {
-            Log.debug("userSelectedType: \(userSelectedType)")
-            viewModel.userType = userSelectedType
+            Log.debug("isReviewVersion: \(UserDefaults.isReviewVersion)")
         }
         .background(Color(.systemBackground))
         .disabled(viewModel.isPurchasing)
@@ -85,7 +83,7 @@ struct PremiumPurchaseView: View {
     @ViewBuilder
     private var topBar: some View {
         HStack {
-            if viewModel.isUIUpdate || userSelectedType == .reviewer {
+            if viewModel.isUIUpdate || UserDefaults.isReviewVersion {
                 Button {
                     onCloseEvent()
                 } label: {
@@ -164,18 +162,18 @@ struct PremiumPurchaseView: View {
                 subTitle: "only \(viewModel.yearlyPurchaseID?.getsplitPrice(withOutPostFix: true) ?? "nil") per week",
                 isSelected: viewModel.selectedPurchesType == .yearly,
                 isSelectedYearly: true,
-                showSubTitle: userSelectedType != .reviewer
+                showSubTitle: !UserDefaults.isReviewVersion
             )
             .onTapGesture {
                 viewModel.selectedPurchesType = .yearly
             }
 
             PlanRowItem(
-                title: userSelectedType == .reviewer ? "weekly \(viewModel.getWeeklyPrice())" : "3-day free",
+                title: UserDefaults.isReviewVersion ? "weekly \(viewModel.getWeeklyPrice())" : "3-day free",
                 subTitle: "then, \(viewModel.getWeeklyPrice()) per week",
                 isSelected: viewModel.selectedPurchesType == .weekly,
                 isSelectedYearly: false,
-                showSubTitle: userSelectedType != .reviewer
+                showSubTitle: !UserDefaults.isReviewVersion
             )
             .onTapGesture {
                 viewModel.selectedPurchesType = .weekly
@@ -222,5 +220,5 @@ struct PremiumPurchaseView: View {
 }
 
 #Preview {
-    PremiumPurchaseView(userSelectedType: .reviewer, onCloseEvent: {})
+    PremiumPurchaseView(onCloseEvent: {})
 }

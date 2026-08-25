@@ -41,7 +41,10 @@ class PurchaseModel : PurchaseModelDataSource {
     static var shared = PurchaseModel()
     weak var delegate : PurchaseModelDelegate?
     var sharedSecret : String?
-    var isReviewVersion : Bool = false
+    var isReviewVersion : Bool {
+        get { UserDefaults.isReviewVersion }
+        set { UserDefaults.isReviewVersion = newValue }
+    }
     var purchaseIds : [PurchaseId]!
     var userName : String?
     var isReceiptNeedToSave : Bool = true
